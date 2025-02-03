@@ -1,0 +1,9 @@
+---
+const size = Astro.props.size;
+---
+
+<div
+  class={`bg-white rounded-lg select-none border-1 shadow-xs p-4 border-gray-300 ${size}`}
+>
+  <slot />
+</div>
