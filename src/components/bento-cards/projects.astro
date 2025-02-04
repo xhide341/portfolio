@@ -1,0 +1,23 @@
+---
+import BentoCard from "../bento-card.astro";
+import DeployedCodeIcon from "../icons/deployed-code-icon.tsx";
+---
+
+<BentoCard size="w-full h-full" role="region" aria-labelledby="projects-title">
+  <div class="p-4">
+    <h2
+      id="projects-title"
+      class="flex text-lg font-bold items-center gap-1 tracking-wide"
+    >
+      <DeployedCodeIcon />
+      My Projects
+    </h2>
+    <hr class="my-2 text-gray-300" />
+    <div class="ml-2 flex gap-2 p-1 items-center">
+      <h3 class="text-sm font-bold text-black-500 p-0 m-0">ASTRA AI</h3>
+      <p class="text-sm text-black-500 p-0 m-0">
+        - An AI learning platform focusing on observational learning.
+      </p>
+    </div>
+  </div>
+</BentoCard>
