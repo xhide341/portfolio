@@ -2,8 +2,32 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Variable.ttf") format("truetype");
+  src: url("/fonts/Satoshi-Regular.otf") format("opentype");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Medium.otf") format("opentype");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -12,7 +36,7 @@
   --font-family-satoshi: "Satoshi", sans-serif;
 }
 
-html {
+body {
   font-family: var(--font-family-satoshi), "Inter", sans-serif;
 }
 
