@@ -1,0 +1,34 @@
+---
+import BentoCard from "../bento-card.astro";
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
+---
+
+<BentoCard size="w-full h-full" role="region" aria-labelledby="about-me-title">
+  <div class="p-4">
+    <h2
+      id="about-me-title"
+      class="flex text-lg font-bold items-center gap-1 tracking-wide"
+    >
+      <InformationCircleIcon className="w-5 h-5" />
+      About Me
+    </h2>
+    <p class="text-sm text-black-500 p-1 leading-relaxed">
+      I am a full stack web developer with a focus on user experience and
+      performance. I am...
+    </p>
+    <ul class="text-sm p-2 gap-2 text-black-500 list-disc list-inside">
+      <li>a BSIT graduate</li>
+      <li>familiar with both php and javascript ecosystems</li>
+      <li>into all things that make the world an interesting place</li>
+    </ul>
+    <p class="text-sm text-black-500 p-1 leading-relaxed">
+      I've dabbled with laravel, nextjs, astro, and react. I'm also comfortable
+      with TALL stack and am currently learning VueJS. I'm especially curious to
+      explore tech stacks that take a strong stance on development practices.
+    </p>
+    <p class="text-sm text-black-500 p-1 leading-relaxed">
+      I'm also interested in AI and its ability to help developers build better
+      products. On that note, I have experience integrating AI using langchain.
+    </p>
+  </div>
+</BentoCard>

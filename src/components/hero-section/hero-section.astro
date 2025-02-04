@@ -1,0 +1,29 @@
+---
+import BorderColumn from "../border-column.astro";
+import Profile from "../bento-cards/profile.astro";
+import Quotes from "../bento-cards/quotes.astro";
+import AboutMe from "../bento-cards/about-me.astro";
+import History from "../bento-cards/history.astro";
+---
+
+<div class="relative flex flex-col h-dvh max-w-screen-lg mx-auto px-10">
+  <BorderColumn position="left-0" />
+  <BorderColumn position="right-0" />
+  <div class="grid grid-cols-1 md:grid-cols-8 p-10 gap-2">
+    <!-- first row -->
+    <div class="grid-item-1 col-span-8 flex">
+      <Profile />
+    </div>
+    <!-- second row -->
+    <div class="grid-item-2 col-span-8 mt-10 w-full text-center">
+      <Quotes />
+    </div>
+    <!-- third row -->
+    <div class="grid-item-3 col-span-5">
+      <AboutMe />
+    </div>
+    <div class="grid-item-4 col-span-3">
+      <History />
+    </div>
+  </div>
+</div>

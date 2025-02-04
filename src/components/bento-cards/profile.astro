@@ -1,0 +1,28 @@
+---
+import BentoCard from "../bento-card.astro";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import profile from "../../images/crucified-kid.jpg";
+import { Image } from "astro:assets";
+---
+
+<div class="flex gap-4 p-0">
+  <BentoCard size="w-30 h-30">
+    <Image
+      src={profile}
+      alt="profile"
+      class="w-full h-full object-cover rounded-lg"
+    />
+  </BentoCard>
+  <div class="flex flex-col text-start text-black gap-1 justify-around">
+    <h4 class="text-2xl font-bold">John Doe</h4>
+    <div class="flex flex-col gap-1">
+      <p class="text-sm flex items-center gap-1">
+        <EnvelopeIcon className="w-4 h-4" /> johndoe@gmail.com
+      </p>
+      <p class="text-sm flex items-center gap-1">
+        <MapPinIcon className="w-4 h-4" /> Bulacan, Philippines
+      </p>
+    </div>
+    <h3 class="text-md font-semibold">Web Developer</h3>
+  </div>
+</div>
