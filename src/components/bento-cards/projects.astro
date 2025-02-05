@@ -1,6 +1,8 @@
 ---
 import BentoCard from "../bento-card.astro";
 import DeployedCodeIcon from "../icons/deployed-code-icon.tsx";
+import PublicIcon from "../icons/public-icon.tsx";
+import GithubIcon from "../icons/github-icon.tsx";
 ---
 
 <BentoCard size="w-full h-full" role="region" aria-labelledby="projects-title">
@@ -12,6 +14,28 @@ import DeployedCodeIcon from "../icons/deployed-code-icon.tsx";
       <DeployedCodeIcon />
       My Projects
     </h2>
+    <p class="text-xs text-gray-500 p-0 ml-2">
+      Note: None of these projects are cloned/forked. Everything I built is for
+      practicing purposes.
+    </p>
+    <hr class="my-2 text-gray-300" />
+    <div class="ml-2 flex gap-2 p-1 justify-between items-center">
+      <div class="flex gap-2 items-center">
+        <h3 class="text-sm font-bold text-black-500 p-0 m-0">ASTRA AI</h3>
+        <p class="text-sm text-black-500 p-0 m-0">
+          - An AI learning platform focusing on observational learning.
+        </p>
+      </div>
+      <div class="flex gap-1 items-center">
+        <a href="https://astra-ai-iota.vercel.app" target="_blank">
+          <PublicIcon />
+        </a>
+        <a href="https://github.com/xhide341/astra-ai" target="_blank">
+          <GithubIcon />
+        </a>
+      </div>
+      <!-- TODO: add tech icons used in the project -->
+    </div>
     <hr class="my-2 text-gray-300" />
     <div class="ml-2 flex gap-2 p-1 items-center">
       <h3 class="text-sm font-bold text-black-500 p-0 m-0">ASTRA AI</h3>
