@@ -3,6 +3,7 @@ import BentoCard from "../bento-card.astro";
 import DeployedCodeIcon from "../icons/deployed-code-icon.tsx";
 import PublicIcon from "../icons/public-icon.tsx";
 import GithubIcon from "../icons/github-icon.tsx";
+import NextJsIcon from "../icons/nextjs-icon.tsx";
 ---
 
 <BentoCard size="w-full h-full" role="region" aria-labelledby="projects-title">
@@ -26,13 +27,24 @@ import GithubIcon from "../icons/github-icon.tsx";
           - An AI learning platform focusing on observational learning.
         </p>
       </div>
-      <div class="flex gap-1 items-center">
-        <a href="https://astra-ai-iota.vercel.app" target="_blank">
-          <PublicIcon />
-        </a>
-        <a href="https://github.com/xhide341/astra-ai" target="_blank">
-          <GithubIcon />
-        </a>
+      <div class="flex flex-col gap-2">
+        <div class="flex gap-1 items-center">
+          <a
+            href="https://astra-ai-iota.vercel.app"
+            target="_blank"
+            class="align-self-center vertical-align-middle inline-flex"
+          >
+            <PublicIcon />
+          </a>
+          <a
+            href="https://github.com/xhide341/astra-ai"
+            target="_blank"
+            class="align-self-center vertical-align-middle inline-flex"
+          >
+            <GithubIcon />
+          </a>
+        </div>
+        <NextJsIcon />
       </div>
       <!-- TODO: add tech icons used in the project -->
     </div>
