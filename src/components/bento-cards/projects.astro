@@ -5,6 +5,9 @@ import PublicIcon from "../icons/public-icon.tsx";
 import GithubIcon from "../icons/github-icon.tsx";
 import NextJsIcon from "../icons/nextjs-icon.tsx";
 import ReactIcon from "../icons/react-icon.tsx";
+import PrismaIcon from "../icons/prisma-icon.tsx";
+import NextAuthIcon from "../icons/nextauth-icon.tsx";
+import PostgreSQLIcon from "../icons/postgresql-icon.tsx";
 ---
 
 <BentoCard size="w-full h-full" role="region" aria-labelledby="projects-title">
@@ -29,7 +32,7 @@ import ReactIcon from "../icons/react-icon.tsx";
         </p>
       </div>
       <div class="flex flex-col gap-2">
-        <div class="flex flex-end gap-1 items-center">
+        <div class="flex self-end gap-1 items-center">
           <a
             href="https://astra-ai-iota.vercel.app"
             target="_blank"
@@ -48,6 +51,13 @@ import ReactIcon from "../icons/react-icon.tsx";
         <div class="flex self-end gap-1 items-center">
           <NextJsIcon />
           <ReactIcon />
+          <div class="tooltip">
+            <p class="text-xs rounded-md border border-gray-300 p-1">Zustand</p>
+            <div class="tooltiptext">Zustand</div>
+          </div>
+          <PrismaIcon />
+          <NextAuthIcon />
+          <PostgreSQLIcon />
         </div>
       </div>
       <!-- TODO: add tech icons used in the project -->
