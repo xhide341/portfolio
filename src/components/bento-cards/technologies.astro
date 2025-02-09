@@ -1,0 +1,40 @@
+---
+import BentoCard from "../bento-card.astro";
+import CodeBlockIcon from "../icons/code-block-icon.tsx";
+---
+
+<BentoCard size="w-full h-[300px]">
+  <div class="p-4">
+    <h2
+      id="technologies-title"
+      class="flex text-lg font-bold items-center gap-1 tracking-wide mb-2"
+    >
+      <CodeBlockIcon />
+      Technologies
+    </h2>
+    <table
+      class="w-full text-center p-1 border-collapse border border-gray-300"
+    >
+      <thead>
+        <tr>
+          <th class="border border-gray-300">Category</th>
+          <th class="border border-gray-300">Tech Stack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-300">Frontend</td>
+          <td class="border border-gray-300 text-xs">
+            HTML5, CSS3, JavaScript, TypeScript, Tailwind CSS, React
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-300">Backend</td>
+          <td class="border border-gray-300 text-xs">
+            PHP, Java, Laravel, Next.js
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</BentoCard>

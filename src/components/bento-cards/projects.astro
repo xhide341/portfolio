@@ -8,6 +8,7 @@ import ReactIcon from "../icons/react-icon.tsx";
 import PrismaIcon from "../icons/prisma-icon.tsx";
 import NextAuthIcon from "../icons/nextauth-icon.tsx";
 import PostgreSQLIcon from "../icons/postgresql-icon.tsx";
+import LaravelIcon from "../icons/laravel-icon.tsx";
 ---
 
 <BentoCard size="w-full h-full" role="region" aria-labelledby="projects-title">
@@ -60,7 +61,29 @@ import PostgreSQLIcon from "../icons/postgresql-icon.tsx";
           <PostgreSQLIcon />
         </div>
       </div>
-      <!-- TODO: add tech icons used in the project -->
+    </div>
+    <hr class="my-2 text-gray-300" />
+    <div class="ml-2 flex gap-2 p-1 justify-between items-center">
+      <div class="flex gap-2 items-center">
+        <h3 class="text-sm font-bold text-black-500 p-0 m-0">Event Sphere</h3>
+        <p class="text-sm text-black-500 p-0 m-0">
+          - An all-in-one event management platform.
+        </p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div class="flex self-end gap-1 items-center">
+          <a
+            href="https://github.com/xhide341/eventsphere"
+            target="_blank"
+            class="align-self-end vertical-align-middle inline-flex"
+          >
+            <GithubIcon />
+          </a>
+        </div>
+        <div class="flex self-end gap-1 items-center">
+          <LaravelIcon />
+        </div>
+      </div>
     </div>
   </div>
 </BentoCard>

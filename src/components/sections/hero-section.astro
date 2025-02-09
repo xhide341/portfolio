@@ -4,10 +4,11 @@ import Profile from "../bento-cards/profile.astro";
 import Quotes from "../bento-cards/quotes.astro";
 import AboutMe from "../bento-cards/about-me.astro";
 import History from "../bento-cards/history.astro";
+import Technologies from "../bento-cards/technologies.astro";
 import Projects from "../bento-cards/projects.astro";
 ---
 
-<div class="relative flex flex-col h-dvh max-w-screen-lg mx-auto px-10">
+<div class="relative flex flex-col h-full max-w-screen-lg mx-auto px-10">
   <BorderColumn position="left-0" />
   <BorderColumn position="right-0" />
   <div class="grid grid-cols-1 md:grid-cols-8 p-10 gap-2">
@@ -26,7 +27,12 @@ import Projects from "../bento-cards/projects.astro";
     <div class="grid-item-4 col-span-3">
       <History />
     </div>
-    <div class="grid-item-5 col-span-8 w-full">
+    <!-- fourth row -->
+    <div class="grid-item-5 col-start-4 col-span-5 w-full">
+      <Technologies />
+    </div>
+    <!-- fifth row -->
+    <div class="grid-item-6 col-span-8 w-full">
       <Projects />
     </div>
   </div>
