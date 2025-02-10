@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Regular.otf") format("opentype");
@@ -11,6 +10,7 @@
 
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
 ion-icon {
