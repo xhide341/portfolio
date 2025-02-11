@@ -1,9 +1,10 @@
 ---
 const { size } = Astro.props;
+import { MagicCard } from "./magic-card.tsx";
 ---
 
 <div
-  class={`card relative bg-white rounded-sm select-none border-1 shadow-xs border-gray-300 text-pretty ${size}`}
+  class={`relative bg-white rounded-sm select-none border-1 shadow-xs border-gray-300 text-pretty ${size}`}
 >
   <slot />
 </div>

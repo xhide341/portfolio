@@ -1,9 +1,14 @@
 ---
-import BentoCard from "../bento-card.astro";
+import { MagicCard } from "../magic-card.tsx";
 import InfoIcon from "../icons/info-icon.tsx";
 ---
 
-<BentoCard size="w-full h-full" role="region" aria-labelledby="about-me-title">
+<MagicCard
+  client:load
+  className="w-full h-full relative rounded-sm select-none text-pretty"
+  role="region"
+  aria-labelledby="about-me-title"
+>
   <div class="p-4">
     <h2
       id="about-me-title"
@@ -34,4 +39,4 @@ import InfoIcon from "../icons/info-icon.tsx";
       </p>
     </div>
   </div>
-</BentoCard>
+</MagicCard>
