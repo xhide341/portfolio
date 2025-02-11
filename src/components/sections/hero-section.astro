@@ -2,7 +2,7 @@
 import BorderColumn from "../border-column.astro";
 import Profile from "../bento-cards/profile.astro";
 import Quotes from "../bento-cards/quotes.astro";
-import AboutMe from "../bento-cards/about-me.astro";
+import AboutMe from "../react/about-me.tsx";
 import History from "../bento-cards/history.astro";
 import Technologies from "../bento-cards/technologies.astro";
 import Projects from "../bento-cards/projects.astro";
@@ -22,7 +22,7 @@ import Projects from "../bento-cards/projects.astro";
     </div>
     <!-- third row -->
     <div class="grid-item-3 col-span-5">
-      <AboutMe />
+      <AboutMe client:load />
     </div>
     <div class="grid-item-4 col-span-3">
       <History />

@@ -7,9 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
 	// Enable React to support React JSX components.
 	integrations: [react({
-		 include: ['**/react/*'],
-		 experimentalReactChildren: true,
-		 experimentalDisableStreaming: true,
+		 include: ['**/react/*', '**/magicui/*']
 		})],
 	vite: {
 		plugins: [tailwindcss()],
