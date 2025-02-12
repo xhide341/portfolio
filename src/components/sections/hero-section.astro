@@ -1,11 +1,11 @@
 ---
 import BorderColumn from "../border-column.astro";
 import Profile from "../bento-cards/profile.astro";
-import Quotes from "../bento-cards/quotes.astro";
-import AboutMe from "../react/about-me.tsx";
-import History from "../bento-cards/history.astro";
-import Technologies from "../bento-cards/technologies.astro";
-import Projects from "../bento-cards/projects.astro";
+import Quotes from "../react/magic-cards/quotes.tsx";
+import AboutMe from "../react/magic-cards/about-me.tsx";
+import History from "../react/magic-cards/history.tsx";
+import Technologies from "../react/magic-cards/technologies.tsx";
+import Projects from "../react/magic-cards/projects.tsx";
 ---
 
 <div class="relative flex flex-col h-full max-w-screen-lg mx-auto px-10">
@@ -17,23 +17,23 @@ import Projects from "../bento-cards/projects.astro";
       <Profile />
     </div>
     <!-- second row -->
-    <div class="grid-item-2 col-span-8 mt-10 w-full text-center">
-      <Quotes />
+    <div class="grid-item-2 col-span-8 mt-10 text-center">
+      <Quotes client:load />
     </div>
     <!-- third row -->
     <div class="grid-item-3 col-span-5">
       <AboutMe client:load />
     </div>
     <div class="grid-item-4 col-span-3">
-      <History />
+      <History client:load />
     </div>
     <!-- fourth row -->
-    <div class="grid-item-5 col-start-4 col-span-5 w-full">
-      <Technologies />
+    <div class="grid-item-5 col-start-0 col-span-4 w-full">
+      <Technologies client:load />
     </div>
     <!-- fifth row -->
-    <div class="grid-item-6 col-span-8 w-full">
-      <Projects />
+    <div class="grid-item-6 col-span-8">
+      <Projects client:load />
     </div>
   </div>
 </div>

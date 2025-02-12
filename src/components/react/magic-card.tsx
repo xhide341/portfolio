@@ -9,18 +9,14 @@ interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {
   gradientSize?: number;
   gradientColor?: string;
   gradientOpacity?: number;
-  gradientFrom?: string;
-  gradientTo?: string;
 }
 
 export function MagicCard({
   children,
   className,
-  gradientSize = 200,
-  gradientColor = "#f2f2f2",
+  gradientSize = 100,
+  gradientColor = "transparent",
   gradientOpacity = 0.8,
-  gradientFrom = "#9E7AFF",
-  gradientTo = "#FE8BBB",
 }: MagicCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
@@ -78,10 +74,10 @@ export function MagicCard({
       ref={cardRef}
       className={cn("group relative flex size-full rounded-xl", className)}
     >
-      <div className="absolute inset-px z-10 rounded-lg bg-background" />
-      <div className="relative z-30">{children}</div>
+      <div className="absolute inset-px z-10 rounded-md bg-background" />
+      <div className="relative z-30 w-full h-full">{children}</div>
       <motion.div
-        className="pointer-events-none absolute inset-px z-10 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-px z-10 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)
@@ -90,7 +86,7 @@ export function MagicCard({
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 rounded-lg bg-border duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-md bg-border duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,

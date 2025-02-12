@@ -1,5 +1,5 @@
-import { MagicCard } from "../magicui/magic-card.tsx";
-import InfoIcon from "../icons/info-icon.tsx";
+import { MagicCard } from "../magic-card.tsx";
+import InfoIcon from "../../icons/info-icon.tsx";
 
 export default function AboutMe() {
   return (
