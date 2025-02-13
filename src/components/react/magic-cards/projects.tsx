@@ -8,6 +8,7 @@ import PrismaIcon from "../../icons/prisma-icon.tsx";
 import NextAuthIcon from "../../icons/nextauth-icon.tsx";
 import PostgreSQLIcon from "../../icons/postgresql-icon.tsx";
 import LaravelIcon from "../../icons/laravel-icon.tsx";
+import LangchainIcon from "../../icons/langchain-icon.tsx";
 
 export default function Projects() {
   return (
@@ -59,6 +60,7 @@ export default function Projects() {
               <PrismaIcon />
               <NextAuthIcon />
               <PostgreSQLIcon />
+              <LangchainIcon />
             </div>
           </div>
         </div>
