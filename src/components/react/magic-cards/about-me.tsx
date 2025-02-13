@@ -25,13 +25,13 @@ export default function AboutMe() {
           <li>into all things that make the world an interesting place</li>
         </ul>
         <p className="text-sm text-black-500 py-1">
-          I've dabbled with laravel, nextjs, astro, and react. I'm especially
+          I've dabbled with laravel, nextjs, react, and astro. I'm especially
           curious to explore tech stacks that take a strong stance on development
           practices.
         </p>
         <p className="text-sm text-black-500 py-1">
           I'm also enthusiastic about AI and its ability to help developers build
-          better products. On that note, I have experience integrating AI using
+          better products. On that note, I have experience integrating LLMs using
           langchain.
         </p>
       </div>
