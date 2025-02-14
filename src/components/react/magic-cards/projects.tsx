@@ -29,13 +29,12 @@ export default function Projects() {
           Note: None of these projects are cloned/forked.
         </p>
         <hr className="my-2 text-gray-300" />
-        <div className="pl-2 flex gap-2 p-1 justify-between items-center w-full">
-          <div className="flex gap-2 items-center">
-            <h3 className="text-sm font-bold text-black-500 p-0 m-0">ASTRA AI</h3>
-            <p className="text-xs text-black-500 p-0 m-0" aria-hidden="true">
-            </p>
+        <div className="pl-2 flex gap-2 justify-between w-full">
+          <div className="flex gap-2 h-full">
+            <img src="src/images/astra-ai-logo.jpg" alt="ASTRA AI" className="w-20 h-20 rounded-sm" />
+            <h3 className="text-sm font-semibold text-black-500 pt-1 m-0">ASTRA AI</h3>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col justify-between gap-2">
             <div className="flex self-end gap-1 items-center">
               <a
                 href="https://astra-ai-iota.vercel.app"
@@ -69,13 +68,16 @@ export default function Projects() {
           </div>
         </div>
         <hr className="my-2 text-gray-300" />
-        <div className="pl-2 flex gap-2 p-1 justify-between items-center">
-          <div className="flex gap-2 items-center">
-            <h3 className="text-sm font-bold text-black-500 p-0 m-0">Event Sphere</h3>
-            <p className="text-xs text-black-500 p-0 m-0" aria-hidden="true">
-            </p>
+        <div className="pl-2 flex gap-2 justify-between w-full">
+          <div className="flex gap-2 h-full">
+            <div className="flex items-center rounded-sm bg-black h-20 w-20 justify-center">
+              <img src="src/images/LCUP-logo.png" alt="Event Sphere" className="w-auto h-10 max-h-20" />
+            </div>
+            <div className="flex flex-col justify-between">
+              <h3 className="text-sm font-semibold text-black-500 pt-1 m-0">Event Sphere</h3>
+            </div>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col justify-between gap-2">
             <div className="flex self-end gap-1 items-center">
               <a
                 href="https://github.com/xhide341/eventsphere"
