@@ -3,14 +3,14 @@ import BorderColumn from "../border-column.astro";
 import Profile from "../bento-cards/profile.astro";
 import Quotes from "../react/magic-cards/quotes.tsx";
 import AboutMe from "../react/magic-cards/about-me.tsx";
-import History from "../react/magic-cards/history.tsx";
+import Education from "../react/magic-cards/education.tsx";
 import Technologies from "../react/magic-cards/technologies.tsx";
 import Projects from "../react/magic-cards/projects.tsx";
 ---
 
 <div class="relative flex flex-col h-full max-w-screen-lg mx-auto px-10">
-  <BorderColumn position="left-0" />
-  <BorderColumn position="right-0" />
+  <!-- <BorderColumn position="left-0" />
+  <BorderColumn position="right-0" /> -->
   <div class="grid grid-cols-1 md:grid-cols-8 p-10 gap-2">
     <!-- first row -->
     <div class="grid-item-1 col-span-8 flex">
@@ -25,14 +25,14 @@ import Projects from "../react/magic-cards/projects.tsx";
       <AboutMe client:load />
     </div>
     <div class="grid-item-4 col-span-3">
-      <History client:load />
+      <Education client:load />
     </div>
     <!-- fourth row -->
     <div class="grid-item-5 col-start-0 col-span-3 w-full">
       <Technologies client:load />
     </div>
     <!-- fifth row -->
-    <div class="grid-item-6 col-span-8">
+    <div class="grid-item-5 col-start-4 col-span-5">
       <Projects client:load />
     </div>
   </div>

@@ -2,16 +2,16 @@
 import { MagicCard } from "../magic-card.tsx";
 import HistoryIcon from "../../icons/history-icon.tsx";
 
-export default function History() {
+export default function Education() {
   return (
-    <MagicCard className="w-full h-full" role="region" aria-labelledby="about-me-title">
+    <MagicCard className="w-full h-full" role="region" aria-labelledby="education-title">
       <div className="p-4">
         <h2
-          id="about-me-title"
+          id="education-title"
           className="flex text-lg font-bold items-center gap-1 tracking-wide"
     >
       <HistoryIcon />
-      Education History
+      Education
     </h2>
     <div className="relative ml-2 space-y-6 mt-2">
       <div
