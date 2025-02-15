@@ -34,8 +34,13 @@ import LcupLogo from "../../images/LCUP-logo.png";
     <hr class="my-2 text-gray-300" />
     <div class="pl-2 flex gap-2 justify-between w-full">
       <div class="flex gap-2 h-full">
-        <Image src={AstraAiLogo} alt="ASTRA AI" class="w-20 h-20 rounded-sm" />
-        <h3 class="text-sm font-semibold text-black-500 pt-1 m-0">ASTRA AI</h3>
+        <Image
+          src={AstraAiLogo}
+          alt="ASTRA AI"
+          class="w-20 h-20 rounded-sm"
+          loading="lazy"
+        />
+        <h3 class="text-sm font-medium text-black-500 pt-1 m-0">ASTRA AI</h3>
       </div>
       <div class="flex flex-col justify-between gap-2">
         <div class="flex self-end gap-1 items-center">
@@ -80,10 +85,11 @@ import LcupLogo from "../../images/LCUP-logo.png";
             src={LcupLogo}
             alt="Event Sphere"
             class="w-auto h-10 max-h-20"
+            loading="lazy"
           />
         </div>
         <div class="flex flex-col justify-between">
-          <h3 class="text-sm font-semibold text-black-500 pt-1 m-0">
+          <h3 class="text-sm font-medium text-black-500 pt-1 m-0">
             Event Sphere
           </h3>
         </div>
