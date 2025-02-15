@@ -8,28 +8,28 @@ import Projects from "../magic-cards/projects.astro";
 ---
 
 <div>
-  <div class="grid grid-cols-1 md:grid-cols-8 px-10 pt-10 gap-2">
+  <div class="grid grid-cols-1 md:grid-cols-8 px-4 md:px-10 pt-10 gap-2">
     <!-- first row -->
     <div class="grid-item-1 col-span-8 flex">
       <Profile />
     </div>
     <!-- second row -->
-    <div class="grid-item-2 col-span-8 mt-10 text-center">
+    <div class="grid-item-2 col-span-8 mt-5 md:mt-10 text-center">
       <Quotes />
     </div>
     <!-- third row -->
-    <div class="grid-item-3 col-span-5">
+    <div class="grid-item-3 col-span-8 lg:col-span-5">
       <AboutMe />
     </div>
-    <div class="grid-item-4 col-span-3">
+    <!-- fourth row -->
+    <div class="grid-item-4 col-span-8 sm:col-span-4 lg:col-span-3">
       <Education />
     </div>
-    <!-- fourth row -->
-    <div class="grid-item-5 col-start-0 col-span-3 w-full">
+    <div class="grid-item-5 col-span-8 sm:col-span-4 lg:col-span-3">
       <Technologies />
     </div>
     <!-- fifth row -->
-    <div class="grid-item-5 col-start-4 col-span-5">
+    <div class="grid-item-6 lg:grid-item-5 col-span-8 lg:col-span-5">
       <Projects />
     </div>
   </div>
