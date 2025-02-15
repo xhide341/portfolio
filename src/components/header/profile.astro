@@ -1,5 +1,9 @@
 ---
-import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import {
+  EnvelopeIcon,
+  MapPinIcon,
+  BriefcaseIcon,
+} from "@heroicons/react/20/solid";
 import profile from "../../images/crucified-kid.jpg";
 import { Image } from "astro:assets";
 ---
@@ -13,14 +17,19 @@ import { Image } from "astro:assets";
       loading="eager"
     />
     <div class="flex flex-col text-start text-black gap-1 justify-around">
-      <h4 class="text-base md:text-2xl font-bold">Shawne</h4>
-      <h3 class="text-xs md:text-sm text-gray-800">Web/Mobile Developer</h3>
+      <div class="flex flex-col">
+        <h4 class="text-base md:text-2xl font-bold">Shawne</h4>
+        <p class="text-xs md:text-sm text-gray-800">@xhide341</p>
+      </div>
       <div class="flex flex-col gap-1 text-gray-900">
         <p class="text-xs md:text-sm flex items-center gap-1">
-          <EnvelopeIcon className="w-4 h-4" /> shawnehgn10@gmail.com
+          <MapPinIcon className="w-4 h-4" /> Bulacan, Philippines
         </p>
         <p class="text-xs md:text-sm flex items-center gap-1">
-          <MapPinIcon className="w-4 h-4" /> Bulacan, Philippines
+          <BriefcaseIcon className="w-4 h-4" /> Web/Mobile Developer
+        </p>
+        <p class="text-xs md:text-sm flex items-center gap-1">
+          <EnvelopeIcon className="w-4 h-4" /> shawnehgn10@gmail.com
         </p>
       </div>
     </div>
