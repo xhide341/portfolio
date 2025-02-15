@@ -1,12 +1,20 @@
 ---
 import { MagicCard } from "../react/magic-card.tsx";
+import { motion } from "motion/react";
 ---
 
-<MagicCard className="w-full h-full justify-center items-center" client:load>
-  <blockquote
-    class="text-xs md:text-sm font-satoshi font-thin text-black-500 leading-relaxed italic p-4"
-    aria-label="Inspirational quote"
-  >
-    For when a man knows not what port he sails, no wind is favorable.
-  </blockquote>
-</MagicCard>
+<motion.div
+  animate={{ opacity: 1, y: 0 }}
+  initial={{ opacity: 0, y: -20 }}
+  transition={{ duration: 0.5 }}
+  client:load
+>
+  <MagicCard className="w-full h-full justify-center items-center" client:load>
+    <blockquote
+      class="text-xs md:text-sm font-satoshi font-thin text-black-500 leading-relaxed italic p-4"
+      aria-label="Inspirational quote"
+    >
+      For when a man knows not what port he sails, no wind is favorable.
+    </blockquote>
+  </MagicCard>
+</motion.div>
