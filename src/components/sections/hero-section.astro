@@ -1,10 +1,10 @@
 ---
 import Profile from "../header/profile.astro";
-import Quotes from "../react/magic-cards/quotes.tsx";
-import AboutMe from "../react/magic-cards/about-me.tsx";
-import Education from "../react/magic-cards/education.tsx";
-import Technologies from "../react/magic-cards/technologies.tsx";
-import Projects from "../react/magic-cards/projects.tsx";
+import Quotes from "../magic-cards/quotes.astro";
+import AboutMe from "../magic-cards/about-me.astro";
+import Education from "../magic-cards/education.astro";
+import Technologies from "../magic-cards/technologies.astro";
+import Projects from "../magic-cards/projects.astro";
 ---
 
 <div>
@@ -15,22 +15,22 @@ import Projects from "../react/magic-cards/projects.tsx";
     </div>
     <!-- second row -->
     <div class="grid-item-2 col-span-8 mt-10 text-center">
-      <Quotes client:load />
+      <Quotes />
     </div>
     <!-- third row -->
     <div class="grid-item-3 col-span-5">
-      <AboutMe client:load />
+      <AboutMe />
     </div>
     <div class="grid-item-4 col-span-3">
-      <Education client:load />
+      <Education />
     </div>
     <!-- fourth row -->
     <div class="grid-item-5 col-start-0 col-span-3 w-full">
-      <Technologies client:load />
+      <Technologies />
     </div>
     <!-- fifth row -->
     <div class="grid-item-5 col-start-4 col-span-5">
-      <Projects client:load />
+      <Projects />
     </div>
   </div>
 </div>

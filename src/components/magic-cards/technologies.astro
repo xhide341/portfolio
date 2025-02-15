@@ -1,0 +1,110 @@
+---
+import { MagicCard } from "../react/magic-card.tsx";
+import CodeBlockIcon from "../icons/code-block-icon.tsx";
+---
+
+<MagicCard className="w-full" client:load>
+  <div class="p-4">
+    <h2
+      id="technologies-title"
+      class="flex text-lg font-bold items-center gap-1 tracking-wide mb-2"
+      aria-label="Technology Stack"
+    >
+      <CodeBlockIcon aria-hidden="true" />
+      Tech Stack
+    </h2>
+    <div
+      class="flex flex-col gap-2 text-xs font-medium p-2 relative animate-fade-in"
+      role="list"
+    >
+      <div class="flex flex-row gap-2 relative z-10" role="listitem">
+        <p
+          class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="NextJS"
+        >
+          NextJS
+        </p>
+        <p
+          class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Laravel"
+        >
+          Laravel
+        </p>
+      </div>
+      <div class="flex flex-row gap-2 relative z-10" role="listitem">
+        <p
+          class="w-1/3 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Typescript"
+        >
+          Typescript
+        </p>
+        <p
+          class="w-1/3 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="React"
+        >
+          React
+        </p>
+        <p
+          class="w-1/3 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Livewire"
+        >
+          Livewire
+        </p>
+      </div>
+      <div class="flex flex-row gap-2 relative z-10" role="listitem">
+        <p
+          class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Astro"
+        >
+          Astro
+        </p>
+        <p
+          class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Android Studio"
+        >
+          Android Studio
+        </p>
+      </div>
+      <div class="flex flex-row gap-2 relative z-10" role="listitem">
+        <p
+          class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Tailwind"
+        >
+          Tailwind
+        </p>
+        <p
+          class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+          role="button"
+          tabindex="0"
+          aria-label="Langchain"
+        >
+          Langchain
+        </p>
+      </div>
+      <p
+        class="w-full text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform relative z-10"
+        role="button"
+        tabindex="0"
+        aria-label="Docker"
+      >
+        Docker
+      </p>
+    </div>
+  </div>
+</MagicCard>
