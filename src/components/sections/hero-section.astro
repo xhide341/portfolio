@@ -5,6 +5,7 @@ import AboutMe from "../magic-cards/about-me.astro";
 import Education from "../magic-cards/education.astro";
 import Technologies from "../magic-cards/technologies.astro";
 import Projects from "../magic-cards/projects.astro";
+import Services from "../magic-cards/services.astro";
 ---
 
 <div>
@@ -14,23 +15,22 @@ import Projects from "../magic-cards/projects.astro";
       <Profile />
     </div>
     <!-- second row -->
-    <div class="grid-item-2 col-span-8 mt-5 md:mt-10 text-center">
-      <Quotes />
-    </div>
-    <!-- third row -->
-    <div class="grid-item-3 col-span-8 lg:col-span-5">
+    <div class="grid-item-2 col-span-8 lg:col-span-5">
       <AboutMe client:load />
     </div>
-    <!-- fourth row -->
-    <div
-      class="grid-item-4 lg:grid-item-3 col-span-8 sm:col-span-4 lg:col-span-3"
-    >
+    <!-- third row -->
+    <div class="grid-item-3 col-span-8 sm:col-span-4 lg:col-span-3">
       <Education />
     </div>
-    <div class="grid-item-5 col-span-8 sm:col-span-4 lg:col-span-3">
+    <!-- fourth row -->
+    <div class="grid-item-4 col-span-8 sm:col-span-4 lg:col-span-3">
       <Technologies />
     </div>
     <!-- fifth row -->
+    <div class="grid-item-5 col-span-8 lg:col-span-5">
+      <Services />
+    </div>
+    <!-- sixth row -->
     <div class="grid-item-6 col-span-8">
       <Projects />
     </div>

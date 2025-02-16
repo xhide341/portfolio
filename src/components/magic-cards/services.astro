@@ -1,0 +1,109 @@
+---
+import { MagicCard } from "../react/magic-card.tsx";
+import InfoIcon from "../icons/info-icon.tsx";
+import { motion } from "motion/react";
+---
+
+<motion.div
+  animate={{ opacity: 1, x: 0 }}
+  initial={{ opacity: 0, x: 20 }}
+  transition={{ duration: 0.5 }}
+  className="w-full h-full"
+  client:load
+>
+  <MagicCard className="w-full h-full" client:load>
+    <div class="p-4">
+      <h2
+        id="services-title"
+        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide mb-2"
+        aria-label="My Services"
+      >
+        <InfoIcon aria-hidden="true" />
+        My Services
+      </h2>
+      <div
+        class="flex flex-col gap-2 text-xs font-medium p-2 relative animate-fade-in"
+        role="list"
+      >
+        <div class="flex flex-row gap-2 relative z-10" role="listitem">
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="Web Development"
+            role="presentation"
+          >
+            Web Development
+          </p>
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="Mobile Apps"
+            role="presentation"
+          >
+            Mobile Apps
+          </p>
+        </div>
+        <div class="flex flex-row gap-2 relative z-10" role="listitem">
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="API Development"
+            role="presentation"
+          >
+            API Development
+          </p>
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="Database Design"
+            role="presentation"
+          >
+            Database Design
+          </p>
+        </div>
+        <div class="flex flex-row gap-2 relative z-10" role="listitem">
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="UI/UX Design"
+            role="presentation"
+          >
+            UI/UX Design
+          </p>
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="Code Review"
+            role="presentation"
+          >
+            Code Review
+          </p>
+        </div>
+        <div class="flex flex-row gap-2 relative z-10" role="listitem">
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="Technical Consulting"
+            role="presentation"
+          >
+            Technical Consulting
+          </p>
+          <p
+            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
+            aria-label="System Architecture"
+            role="presentation"
+          >
+            System Architecture
+          </p>
+        </div>
+        <p
+          class="w-full text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform relative z-10"
+          aria-label="AI Integration"
+          role="presentation"
+        >
+          AI Integration
+        </p>
+        <p
+          class="w-full text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform relative z-10"
+          aria-label="DevOps Solutions"
+          role="presentation"
+        >
+          DevOps Solutions
+        </p>
+      </div>
+    </div>
+  </MagicCard>
+</motion.div>
