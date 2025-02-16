@@ -9,6 +9,7 @@ import { motion } from "motion/react";
   initial={{ opacity: 0, x: -20 }}
   transition={{ duration: 0.5 }}
   client:load
+  className="w-full h-full"
 >
   <MagicCard
     className="w-full h-full relative select-none text-pretty"
@@ -18,7 +19,7 @@ import { motion } from "motion/react";
     <div class="p-4">
       <h2
         id="about-me-title"
-        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-normal"
+        class="flex text-base md:text-lg font-bold items-center gap-1 leading-0.5"
       >
         <InfoIcon aria-hidden="true" />
         About

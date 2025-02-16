@@ -9,9 +9,10 @@ import { motion } from "motion/react";
   initial={{ opacity: 0, x: 20 }}
   transition={{ duration: 0.5 }}
   client:load
+  className="w-full h-full"
 >
   <MagicCard
-    className="w-full h-full"
+    className="relative w-full h-full"
     role="region"
     aria-labelledby="education-title"
     client:load
@@ -26,7 +27,7 @@ import { motion } from "motion/react";
         Education
       </h2>
       <div
-        class="flex flex-col my-2 ml-2 space-y-4 lg:space-y-10.5 relative"
+        class="flex flex-col my-2 ml-2 space-y-4 lg:space-y-8 relative"
         role="list"
       >
         <div
