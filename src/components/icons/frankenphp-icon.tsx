@@ -1,7 +1,7 @@
 const FrankenphpIcon = () => {
   return (
     <div className="tooltip">
-      <svg width="20" height="20" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" id="frankenphp">
+      <svg width="18px" height="18px" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" id="frankenphp">
         <path d="M185.137 126.649H161.109C144.633 144.841 179.302 175.734 179.302 175.734C179.302 175.734 167.974 139.349 185.137 126.649Z" fill="white"/>
         <g opacity="0.20">
         <path d="M161.796 126.649C161.796 126.649 162.139 126.649 162.482 126.649C156.99 139.349 170.034 156.169 177.929 165.093C178.958 171.272 180.331 175.734 180.331 175.734C180.331 175.734 145.663 144.498 161.796 126.649Z" fill="black"/>

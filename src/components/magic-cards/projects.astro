@@ -1,7 +1,7 @@
 ---
 import { MagicCard } from "../react/magic-card.tsx";
 import DeployedCodeIcon from "../icons/deployed-code-icon.tsx";
-import PublicIcon from "../icons/public-icon.tsx";
+import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import GithubIcon from "../icons/github-icon.tsx";
 import NextJsIcon from "../icons/nextjs-icon.tsx";
 import ReactIcon from "../icons/react-icon.tsx";
@@ -46,7 +46,7 @@ import LcupLogo from "../../images/LCUP-logo.png";
           ASTRA AI
         </h3>
       </div>
-      <div class="flex flex-col justify-between py-2 gap-2 flex-grow">
+      <div class="flex flex-col justify-between py-1 gap-2 flex-grow">
         <div class="flex self-end gap-1 items-center">
           <a
             href="https://astra-ai-iota.vercel.app"
@@ -54,7 +54,7 @@ import LcupLogo from "../../images/LCUP-logo.png";
             class="align-self-center vertical-align-middle inline-flex"
             aria-label="Visit ASTRA AI website"
           >
-            <PublicIcon aria-hidden="true" />
+            <GlobeAsiaAustraliaIcon className="w-6 h-6" />
           </a>
           <a
             href="https://github.com/xhide341/astra-ai"
@@ -66,16 +66,36 @@ import LcupLogo from "../../images/LCUP-logo.png";
           </a>
         </div>
         <div class="flex self-end gap-1 items-center">
-          <NextJsIcon aria-hidden="true" />
-          <ReactIcon aria-hidden="true" />
-          <div class="tooltip">
-            <p class="text-xs rounded-md border border-gray-300 p-1">Zustand</p>
-            <div class="tooltiptext">Zustand</div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <NextJsIcon aria-hidden="true" />
+            <p class="text-xs">NextJS</p>
           </div>
-          <PrismaIcon aria-hidden="true" />
-          <NextAuthIcon aria-hidden="true" />
-          <PostgreSQLIcon aria-hidden="true" />
-          <LangchainIcon aria-hidden="true" />
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <ReactIcon aria-hidden="true" />
+            <p class="text-xs">React</p>
+          </div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <PrismaIcon aria-hidden="true" />
+            <p class="text-xs">Prisma</p>
+          </div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <NextAuthIcon aria-hidden="true" />
+            <p class="text-xs">NextAuth</p>
+          </div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <PostgreSQLIcon aria-hidden="true" />
+            <p class="text-xs">PostgreSQL</p>
+          </div>
         </div>
       </div>
     </div>
@@ -98,7 +118,7 @@ import LcupLogo from "../../images/LCUP-logo.png";
           <h3 class="text-sm font-medium text-black-500 m-0">Event Sphere</h3>
         </div>
       </div>
-      <div class="flex flex-col justify-between py-2 gap-2 flex-grow">
+      <div class="flex flex-col justify-between py-1 gap-2 flex-grow">
         <div class="flex self-end gap-1 items-center">
           <a
             href="https://github.com/xhide341/eventsphere"
@@ -110,16 +130,30 @@ import LcupLogo from "../../images/LCUP-logo.png";
           </a>
         </div>
         <div class="flex self-end gap-1 items-center">
-          <LaravelIcon aria-hidden="true" />
-          <LivewireIcon aria-hidden="true" />
-          <AlpineJsIcon aria-hidden="true" />
-          <div class="tooltip">
-            <p class="text-xs rounded-md border border-gray-300 p-1">
-              FilamentPHP
-            </p>
-            <div class="tooltiptext">FilamentPHP</div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <LaravelIcon aria-hidden="true" />
+            <p class="text-xs">Laravel</p>
           </div>
-          <FrankenphpIcon aria-hidden="true" />
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <LivewireIcon aria-hidden="true" />
+            <p class="text-xs">Livewire</p>
+          </div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <AlpineJsIcon aria-hidden="true" />
+            <p class="text-xs">AlpineJS</p>
+          </div>
+          <div
+            class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
+          >
+            <FrankenphpIcon aria-hidden="true" />
+            <p class="text-xs">FrankenPHP</p>
+          </div>
         </div>
       </div>
     </div>
