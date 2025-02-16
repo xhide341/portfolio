@@ -92,7 +92,7 @@ export function MagicCard({
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
               #000, 
               #262626,
-              hsl(0 0% 83.8%) 100%
+              transparent 100%
             )
           `,
         }}
