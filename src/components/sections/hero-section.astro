@@ -3,9 +3,10 @@ import Profile from "../header/profile.astro";
 import AboutMe from "../magic-cards/about-me.astro";
 import Education from "../magic-cards/education.astro";
 import Technologies from "../magic-cards/technologies.astro";
-import Projects from "../magic-cards/projects.astro";
 import Services from "../magic-cards/services.astro";
+import HireMe from "../magic-cards/hire-me.astro";
 import Achievements from "../magic-cards/achievements.astro";
+import Projects from "../magic-cards/projects.astro";
 ---
 
 <div>
@@ -24,20 +25,24 @@ import Achievements from "../magic-cards/achievements.astro";
     </div>
     <!-- fourth row -->
     <div
-      class="grid-item-4 col-span-8 sm:col-span-4 lg:col-span-3 row-start-3 row-end-7"
+      class="grid-item-4 col-span-8 sm:col-span-4 lg:col-span-3 row-start-3 row-end-6"
     >
       <Technologies />
     </div>
     <!-- fifth row -->
-    <div class="grid-item-5 col-span-8 lg:col-span-2 row-start-3 row-end-5">
+    <div class="grid-item-5 col-span-8 lg:col-span-2 row-start-3 row-end-4">
       <Services />
     </div>
     <!-- sixth row -->
-    <div class="grid-item-6 col-span-8 lg:col-span-2 row-start-5 row-end-7">
+    <div class="grid-item-6 col-span-8 lg:col-span-2 row-start-4 row-end-6">
       <Achievements />
     </div>
     <!-- seventh row -->
-    <div class="grid-item-7 col-span-8">
+    <div class="grid-item-7 col-span-8 lg:col-span-3 row-start-3 row-end-6">
+      <HireMe />
+    </div>
+    <!-- eighth row -->
+    <div class="grid-item-8 col-span-8">
       <Projects />
     </div>
   </div>

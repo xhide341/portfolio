@@ -1,0 +1,47 @@
+---
+import { MagicCard } from "../react/magic-card.tsx";
+import DeployedCodeIcon from "../icons/deployed-code-icon.tsx";
+import { motion } from "motion/react";
+---
+
+<motion.div
+  animate={{ opacity: 1, x: 0 }}
+  initial={{ opacity: 0, x: -20 }}
+  transition={{ duration: 0.5 }}
+  client:load
+  className="w-full h-full"
+>
+  <MagicCard
+    className="w-full h-full relative select-none text-pretty"
+    client:load
+    aria-labelledby="hire-me-title"
+  >
+    <div class="p-4">
+      <h2
+        id="hire-me-title"
+        class="flex text-base md:text-lg font-bold items-center gap-1 leading-0.5"
+      >
+        <DeployedCodeIcon aria-hidden="true" />
+        Hire Me
+      </h2>
+      <div
+        class="text-xs md:text-sm text-black-500 p-1 text-justify leading-relaxed"
+      >
+        <p class="py-1">
+          I prioritize building simple yet elegant web applications that offer
+          seamless user experiences. My commitment to quality is reflected in my
+          dedication to achieving:
+        </p>
+        <ul
+          class="p-2 text-start text-sm gap-2 list-disc list-inside"
+          role="list"
+        >
+          <li role="listitem" class="py-1">90+ Performance score</li>
+          <li role="listitem" class="py-1">90+ WCAG Standard compliance</li>
+          <li role="listitem" class="py-1">90+ Best Practices</li>
+          <li role="listitem" class="py-1">90+ SEO optimization score</li>
+        </ul>
+      </div>
+    </div>
+  </MagicCard>
+</motion.div>
