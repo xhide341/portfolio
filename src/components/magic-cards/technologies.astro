@@ -8,9 +8,10 @@ import { motion } from "motion/react";
   animate={{ opacity: 1, x: 0 }}
   initial={{ opacity: 0, x: -20 }}
   transition={{ duration: 0.5 }}
+  className="w-full h-full"
   client:load
 >
-  <MagicCard className="w-full" client:load>
+  <MagicCard className="w-full h-full" client:load>
     <div class="p-4">
       <h2
         id="technologies-title"
