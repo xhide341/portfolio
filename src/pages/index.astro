@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import HeroSection from "../components/sections/hero-section.astro";
+import Header from "../components/header-section.astro";
 import "../styles/global.css";
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -28,9 +29,10 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body
-    class="relative w-screen max-w-screen-xl mx-auto h-dvh bg-background font-poppins"
+    class="relative w-screen max-w-screen-xl mx-auto h-dvh bg-background font-poppins p-4 md:py-10 md:px-20"
   >
-    <main class="relative px-10">
+    <Header />
+    <main class="relative">
       <HeroSection />
     </main>
     <footer class="w-full mx-auto py-4 px-20 text-center">
