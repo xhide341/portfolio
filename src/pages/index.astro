@@ -1,43 +1,12 @@
 ---
 // Component Imports
-import HeroSection from "../components/sections/hero-section.astro";
-import Header from "../components/header-section.astro";
+import BaseLayout from "../layouts/base-layout.astro";
+import HomeSection from "../components/sections/home-section.astro";
 import "../styles/global.css";
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-></script>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  </head>
-  <body
-    class="relative w-screen max-w-screen-xl mx-auto h-dvh bg-background font-poppins p-4 md:py-10 md:px-20"
-  >
-    <Header />
-    <main class="relative">
-      <HeroSection />
-    </main>
-    <footer class="w-full mx-auto py-4 px-20 text-center">
-      <hr class="text-gray-300 w-full mx-auto py-2" />
-      <p class="text-sm text-gray-700">© 2025. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+<BaseLayout>
+  <HomeSection />
+</BaseLayout>
