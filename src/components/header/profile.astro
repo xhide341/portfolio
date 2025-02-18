@@ -7,6 +7,9 @@ import {
 import profile from "../../images/crucified-kid.jpg";
 import { Image } from "astro:assets";
 import { MagicCard } from "../react/magic-card.tsx";
+import BlueSkyIcon from "../icons/bluesky-icon.tsx";
+import DiscordIcon from "../icons/discord-icon.tsx";
+import LinkedInIcon from "../icons/linkedin-icon.tsx";
 ---
 
 <MagicCard className="w-full h-full" client:load>
@@ -17,7 +20,7 @@ import { MagicCard } from "../react/magic-card.tsx";
       <Image
         src={profile}
         alt="profile"
-        class="w-25 h-25 object-cover rounded-full"
+        class="w-25 h-25 md:w-30 md:h-30 object-cover rounded-full"
         loading="lazy"
       />
       <div
@@ -27,16 +30,35 @@ import { MagicCard } from "../react/magic-card.tsx";
           <h4 class="text-base md:text-xl font-bold">Shawne</h4>
           <p class="text-xs md:text-sm text-gray-800">@xhide341</p>
         </div>
-        <div class="flex flex-col gap-1 text-gray-900">
-          <p class="text-xs md:text-sm flex items-center gap-1">
-            <MapPinIcon className="w-4 h-4" /> Bulacan, Philippines
-          </p>
-          <p class="text-xs md:text-sm flex items-center gap-1">
-            <BriefcaseIcon className="w-4 h-4" /> Web/Mobile Developer
-          </p>
-          <p class="text-xs md:text-sm flex items-center gap-1">
-            <EnvelopeIcon className="w-4 h-4" /> shawnehgn10@gmail.com
-          </p>
+        <!-- TODO: Add social media links -->
+        <div class="flex gap-2 justify-center mt-2">
+          <a
+            href="https://bsky.app/profile/xhide341"
+            target="_blank"
+            aria-label="BlueSky"
+          >
+            <BlueSkyIcon />
+          </a>
+          <a
+            href="https://discord.com/users/364749406878171136"
+            target="_blank"
+            aria-label="Discord"
+          >
+            <DiscordIcon />
+          </a>
+          <a
+            href="https://linkedin.com/in/your-profile"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <LinkedInIcon />
+          </a>
+          <a href="mailto:your-email@example.com" aria-label="Email">
+            <div class="tooltip">
+              <EnvelopeIcon className="w-6 h-6" />
+              <div class="tooltiptext">Email</div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
