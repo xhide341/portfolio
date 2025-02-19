@@ -15,10 +15,10 @@ interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {
 export function MagicCard({
   children,
   className,
-  gradientSize = 250,
+  gradientSize = 400,
   gradientColor = "transparent",
   gradientOpacity = 0.8,
-  backgroundPattern = "",
+  backgroundPattern = "cloud-pattern",
 }: MagicCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
@@ -78,13 +78,13 @@ export function MagicCard({
     >
       <div
         className={cn(
-          "absolute inset-px z-10 rounded-lg bg-background",
+          "absolute inset-px z-10 rounded-md bg-background",
           backgroundPattern
         )}
       />
       <div className="relative z-30 w-full h-full">{children}</div>
       <motion.div
-        className="pointer-events-none absolute inset-px z-10 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-px z-10 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)
@@ -93,7 +93,7 @@ export function MagicCard({
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 rounded-lg bg-border duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-md bg-border duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
