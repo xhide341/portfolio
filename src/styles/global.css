@@ -69,6 +69,24 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 0.5rem;
   }
+  
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
+
+  @keyframes marquee-vertical {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap))); }
+  }
+
+  .marquee {
+    animation: marquee var(--duration) linear infinite;
+  }
+
+  .marquee-vertical {
+    animation: marquee-vertical var(--duration) linear infinite;
+  }
 }
 
 @font-face {
@@ -77,12 +95,6 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
-
-ion-icon {
-  color: #000;
-  font-size: 20px;
-  --ionicon-stroke-width: 24px;
 }
 
 .skeleton-loader {
@@ -172,6 +184,7 @@ ion-icon {
   --swiper-pagination-bullet-opacity: 1;
   --swiper-pagination-bullet-horizontal-gap: 4px;
   --swiper-pagination-bullet-vertical-gap: 6px;
+  --duration: 10s;
 }
 
 /*

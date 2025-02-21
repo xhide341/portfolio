@@ -1,0 +1,31 @@
+---
+import { MagicCard } from "../react/magic-card.tsx";
+import { Marquee } from "../react/marquee.tsx";
+import { motion } from "motion/react";
+---
+
+<motion.div
+  animate={{ opacity: 1, x: 0 }}
+  initial={{ opacity: 0, x: -20 }}
+  transition={{ duration: 0.5 }}
+  client:load
+  className="w-full h-full"
+>
+  <MagicCard
+    className="w-full h-full relative select-none text-pretty"
+    client:load
+    aria-labelledby="availability-title"
+  >
+    <div class="p-2">
+      <div class="flex justify-between items-center text-xs md:text-sm font-base text-black-500 px-1">
+        <p class="px-4 p-2 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Available
+        </p>
+        <button class="px-4 p-2 flex text-xs rounded-lg border border-black-500 cursor-pointer hover:bg-gray-100 items-center gap-2">
+          Let's Connect          
+        </button>
+      </div>
+    </div>
+  </MagicCard>
+</motion.div>
