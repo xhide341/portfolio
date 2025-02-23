@@ -1,11 +1,11 @@
-const LivewireIcon = () => {
+const LivewireIcon = ({ width = "20px", height = "20px" }: { width?: string; height?: string }) => {
   return (
     <div className="tooltip">
         <div style={{ display: 'inline-block' }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="18px"
-            height="18px"
+            width={width}
+            height={height}
             viewBox="0 0 128 128"
           >
             <path

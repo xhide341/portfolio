@@ -6,26 +6,30 @@ import NextJsIcon from "../../icons/nextjs-icon.tsx";
 import ReactIcon from "../../icons/react-icon.tsx";
 import TypescriptIcon from "../../icons/typescript-icon.tsx";
 import TailwindIcon from "../../icons/tailwind-icon.tsx";
+import LaravelIcon from "../../icons/laravel-icon.tsx";
+import LivewireIcon from "../../icons/livewire-icon.tsx";
+import AlpinejsIcon from "../../icons/alpinejs-icon.tsx";
+import PhpIcon from "../../icons/php-icon.tsx";
+import LangchainIcon from "../../icons/langchain-icon.tsx";
+import AstroIcon from "../../icons/astro-icon.tsx";
+import JavaScriptIcon from "../../icons/javascript-icon.tsx";
+import DockerIcon from "../../icons/docker-icon.tsx";
 
 const technologies = [
-  { 
-    name: "Next.js", 
-    Icon: NextJsIcon
-  },
-  { 
-    name: "React", 
-    Icon: ReactIcon
-  },
-  {
-    name: "Typescript",
-    Icon: TypescriptIcon,
-  },
-  { 
-    name: "Tailwind", 
-    Icon: TailwindIcon },
+  { name: "Next.js", Icon: NextJsIcon },
+  { name: "React", Icon: ReactIcon },
+  { name: "Typescript", Icon: TypescriptIcon },
+  { name: "JavaScript", Icon: JavaScriptIcon },
+  { name: "Laravel", Icon: LaravelIcon },
+  { name: "Livewire", Icon: LivewireIcon },
+  { name: "PHP", Icon: PhpIcon },
+  { name: "Alpine.js", Icon: AlpinejsIcon },
+  { name: "Astro", Icon: AstroIcon },
+  { name: "Tailwind", Icon: TailwindIcon },
+  { name: "Docker", Icon: DockerIcon },
+  { name: "Langchain", Icon: LangchainIcon },
 ];
 ---
-
 
 <motion.div
   animate={{ opacity: 1, x: 0 }}
@@ -35,22 +39,26 @@ const technologies = [
   client:load
 >
   <MagicCard className="w-full h-full" client:load>
-    <div class="p-4">
+    <div class="p-4 w-full h-full">
       <h2
         id="technologies-title"
-        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide mb-2"
+        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
         aria-label="Technology Stack"
       >
         <CodeBlockIcon aria-hidden="true" />
         Tech Stack
       </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2" role="list">
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2 pt-4">
         {technologies.map((technology) => {
           const Icon = technology.Icon;
           return (
-            <div class="flex items-center rounded-lg gap-1 border border-gray-200 p-2 transition-all hover:scale-105 group" role="listitem">          
-              <Icon width="24px" height="24px" />            
-              <span class="text-xs font-medium">
+            <div 
+              class="flex justify-start items-center rounded-lg gap-2 border border-gray-200 p-2 transition-all hover:scale-105 group bg-gray-50" 
+              role="listitem"
+            >          
+              <Icon width="20px" height="20px" />            
+              <span class="text-xs">
                 {technology.name}
               </span>
             </div>
