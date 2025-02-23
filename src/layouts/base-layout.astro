@@ -21,9 +21,19 @@ import "../styles/global.css";
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
+    <script is:inline>
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
     <!-- Add any other head elements here -->
   </head>
-  <body class="relative h-dvh py-10 bg-gray-100">
+  <body class="relative h-dvh py-10 bg-gray-100 dark:bg-slate-950">
     <Header />
     <main
       class="relative w-screen max-w-screen-xl mx-auto font-poppins p-4 md:px-20"
