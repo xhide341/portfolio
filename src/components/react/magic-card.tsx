@@ -98,7 +98,7 @@ export function MagicCard({
     >
       <div
         className={cn(
-          "absolute inset-px z-10 rounded-md bg-background",
+          "absolute inset-px z-10 rounded-md bg-background dark:bg-[hsla(220,100%,90%,0.12)] dark:backdrop-blur-sm",
           backgroundPattern
         )}
       />
@@ -118,7 +118,7 @@ export function MagicCard({
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
               ${isDark 
-                ? 'hsl(0 100% 50%), hsl(0 100% 30%), hsl(0 0% 0%) 100%'
+                ? 'hsla(220, 100%, 90%, 0.12), hsla(220, 100%, 80%, 0.08), transparent 100%'
                 : 'hsl(0 0% 0%), hsl(0 0% 15%), hsl(0 0% 89.8%) 100%'
               }
             )
