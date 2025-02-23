@@ -23,6 +23,24 @@ export function MagicCard({
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
   const mouseY = useMotionValue(-gradientSize);
+  const [isDark, setIsDark] = React.useState(false);
+
+  useEffect(() => {
+    setIsDark(localStorage.theme === 'dark');
+    
+    // Listen for both storage events (other tabs) and custom theme change events
+    const handleThemeChange = () => {
+      setIsDark(localStorage.theme === 'dark');
+    };
+    
+    window.addEventListener('storage', handleThemeChange);
+    document.addEventListener('themeChange', handleThemeChange);
+    
+    return () => {
+      window.removeEventListener('storage', handleThemeChange);
+      document.removeEventListener('themeChange', handleThemeChange);
+    };
+  }, []);
 
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
@@ -71,6 +89,8 @@ export function MagicCard({
     mouseY.set(-gradientSize);
   }, [gradientSize, mouseX, mouseY]);
 
+  console.log(isDark);
+
   return (
     <div
       ref={cardRef}
@@ -97,9 +117,10 @@ export function MagicCard({
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
-              #000, 
-              #262626,
-              hsl(0 0% 89.8%) 100%
+              ${isDark 
+                ? 'hsl(0 100% 50%), hsl(0 100% 30%), hsl(0 0% 0%) 100%'
+                : 'hsl(0 0% 0%), hsl(0 0% 15%), hsl(0 0% 89.8%) 100%'
+              }
             )
           `,
         }}
