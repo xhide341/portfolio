@@ -55,8 +55,22 @@
     transition: transform 0.15s ease-in-out;
   }
 
-  .nav-link:hover::after {
+  /* Remove active underline when any nav-link is hovered */
+  nav:hover .nav-link.active::after {
+    transform: scaleX(0);
+  }
+
+  /* Show underline only for hovered item */
+  nav:hover .nav-link:hover::after {
     transform: scaleX(1);
+  }
+
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+  .nav-link.active {
+    font-weight: 500;
   }
 
   .services-swiper,

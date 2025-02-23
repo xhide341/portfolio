@@ -1,5 +1,22 @@
 ---
+// Get the current path
+const { pathname } = Astro.url;
 
+// Define your navigation items
+const navItems = [
+  { href: "/", text: "Home" },
+  { href: "/works", text: "Works" },
+  { href: "/about", text: "About" },
+  { href: "/blogs", text: "Blogs" },
+];
+
+// Helper function to check if link is active
+const isActive = (href: string) => {
+  if (href === '/') {
+    return pathname === href;
+  }
+  return pathname.startsWith(href);
+};
 ---
 
 <header
@@ -10,15 +27,16 @@
 
   <!-- Navigation Links -->
   <nav class="flex space-x-4 md:space-x-12 pt-2 pr-8 text-md font-base h-full">
-    <a href="/" class="nav-link relative text-gray-800 dark:text-white">Home</a>
-    <a href="/works" class="nav-link relative text-gray-800 dark:text-white"
-      >Works</a
-    >
-    <a href="/about" class="nav-link relative text-gray-800 dark:text-white"
-      >About</a
-    >
-    <a href="/blogs" class="nav-link relative text-gray-800 dark:text-white"
-      >Blogs</a
-    >
+    {navItems.map(({ href, text }) => (
+      <a
+        href={href}
+        class:list={[
+          "nav-link relative text-gray-800 dark:text-white",
+          { active: isActive(href) }
+        ]}
+      >
+        {text}
+      </a>
+    ))}
   </nav>
 </header>
