@@ -27,7 +27,7 @@ import { motion } from "motion/react";
   className="w-full h-full"
 >
   <MagicCard className="w-full h-full" client:load>
-    <div class="p-4 flex flex-col h-full">
+    <div class="p-4 flex flex-col h-full w-full">
       <h2
         id="projects-title"
         class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
@@ -77,13 +77,13 @@ import { motion } from "motion/react";
             <div
               class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
             >
-              <NextJsIcon width={20} height={20} />
+              <NextJsIcon width="18px" height="18px" />
               <p class="text-xs">NextJS</p>
             </div>
             <div
               class="flex items-center gap-1 border border-gray-300 py-1 px-1.25 rounded-full"
             >
-              <ReactIcon aria-hidden="true" />
+              <ReactIcon width="18px" height="18px" />
               <p class="text-xs">React</p>
             </div>
             <div
