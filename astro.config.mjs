@@ -10,7 +10,17 @@ export default defineConfig({
     // Enable React to support React JSX components.
     integrations: [react({
          include: ['**/react/*', '**/magicui/*']
-        }), icon()],
+        }), icon({
+            svgoOptions: {
+                plugins: [
+                  "preset-default",
+                  {
+                    name: "convertColors",
+                    params: { currentColor: true },
+                  },
+                ],
+              },
+        })],
     vite: {
         plugins: [tailwindcss()],
     },

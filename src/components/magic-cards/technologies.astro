@@ -2,7 +2,27 @@
 import { MagicCard } from "../react/magic-card.tsx";
 import CodeBlockIcon from "../../icons/code-block-icon.tsx";
 import { motion } from "motion/react";
+import NextJsIcon from "../../icons/nextjs-icon.tsx";
+import ReactIcon from "../../icons/react-icon.tsx";
+import TypescriptIcon from "../../icons/typescript-icon.tsx";
+
+const technologies = [
+  { 
+    name: "Next.js", 
+    Icon: NextJsIcon
+  },
+  { 
+    name: "React", 
+    Icon: ReactIcon
+  },
+  {
+    name: "Typescript",
+    Icon: TypescriptIcon,
+  },
+  // { name: "Tailwind", Icon: TailwindIcon },
+];
 ---
+
 
 <motion.div
   animate={{ opacity: 1, x: 0 }}
@@ -21,88 +41,20 @@ import { motion } from "motion/react";
         <CodeBlockIcon aria-hidden="true" />
         Tech Stack
       </h2>
-      <div
-        class="flex flex-col gap-2 text-xs font-medium p-2 relative animate-fade-in"
-        role="list"
-      >
-        <div class="flex flex-row gap-2 relative z-10" role="listitem">
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="NextJS"
-            role="presentation"
-          >
-            NextJS
-          </p>
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="Laravel"
-            role="presentation"
-          >
-            Laravel
-          </p>
-        </div>
-        <div class="flex flex-row gap-2 relative z-10" role="listitem">
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="Typescript"
-            role="presentation"
-          >
-            Typescript
-          </p>
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="Livewire"
-            role="presentation"
-          >
-            Livewire
-          </p>
-        </div>
-        <div class="flex flex-row gap-2 relative z-10" role="listitem">
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="Astro"
-            role="presentation"
-          >
-            Astro
-          </p>
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="Android Studio"
-            role="presentation"
-          >
-            Android Studio
-          </p>
-        </div>
-        <div class="flex flex-row gap-2 relative z-10" role="listitem">
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="React"
-            role="presentation"
-          >
-            React
-          </p>
-          <p
-            class="w-1/2 text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform"
-            aria-label="Tailwind"
-            role="presentation"
-          >
-            Tailwind
-          </p>
-        </div>
-        <p
-          class="w-full text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform relative z-10"
-          aria-label="Langchain"
-          role="presentation"
-        >
-          Langchain
-        </p>
-        <p
-          class="w-full text-center border rounded-full border-gray-300 p-1.5 bg-white hover:scale-105 transition-transform relative z-10"
-          aria-label="Docker"
-          role="presentation"
-        >
-          Docker
-        </p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2" role="list">
+        {technologies.map((technology) => {
+          const Icon = technology.Icon;
+          return (
+            <div class="flex flex-col items-center justify-center p-3 bg-gray-50 dark:bg-[#1E2330] rounded-lg transition-all hover:scale-105 hover:bg-gray-100 dark:hover:bg-[#252B3B] group" role="listitem">
+              <div class="mb-2 text-gray-600 dark:text-gray-400 group-hover:text-[#000000] dark:group-hover:text-white transition-colors">
+                <Icon />
+              </div>
+              <span class="text-xs font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                {technology.name}
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   </MagicCard>
