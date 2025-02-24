@@ -2,18 +2,18 @@
 import { MagicCard } from "../react/magic-card.tsx";
 import CodeBlockIcon from "../../icons/code-block-icon.tsx";
 import { motion } from "motion/react";
-import NextJsIcon from "../../icons/nextjs-icon.tsx";
-import ReactIcon from "../../icons/react-icon.tsx";
-import TypescriptIcon from "../../icons/typescript-icon.tsx";
-import TailwindIcon from "../../icons/tailwind-icon.tsx";
-import LaravelIcon from "../../icons/laravel-icon.tsx";
-import LivewireIcon from "../../icons/livewire-icon.tsx";
-import AlpinejsIcon from "../../icons/alpinejs-icon.tsx";
-import PhpIcon from "../../icons/php-icon.tsx";
-import LangchainIcon from "../../icons/langchain-icon.tsx";
-import AstroIcon from "../../icons/astro-icon.tsx";
-import JavaScriptIcon from "../../icons/javascript-icon.tsx";
-import DockerIcon from "../../icons/docker-icon.tsx";
+import NextJsIcon from "../../icons/technologies/nextjs-icon.tsx";
+import ReactIcon from "../../icons/technologies/react-icon.tsx";
+import TypescriptIcon from "../../icons/technologies/typescript-icon.tsx";
+import TailwindIcon from "../../icons/technologies/tailwind-icon.tsx";
+import LaravelIcon from "../../icons/technologies/laravel-icon.tsx";
+import LivewireIcon from "../../icons/technologies/livewire-icon.tsx";
+import AlpinejsIcon from "../../icons/technologies/alpinejs-icon.tsx";
+import PhpIcon from "../../icons/technologies/php-icon.tsx";
+import LangchainIcon from "../../icons/technologies/langchain-icon.tsx";
+import AstroIcon from "../../icons/technologies/astro-icon.tsx";
+import JavaScriptIcon from "../../icons/technologies/javascript-icon.tsx";
+import DockerIcon from "../../icons/technologies/docker-icon.tsx";
 
 const technologies = [
   { name: "Next.js", Icon: NextJsIcon },
@@ -54,11 +54,11 @@ const technologies = [
           const Icon = technology.Icon;
           return (
             <div 
-              class="flex justify-start items-center rounded-md gap-2 border border-border p-2 transition-all hover:scale-105 group" 
+              class="flex justify-start items-center rounded-md gap-2 bg-background dark:bg-foreground border border-border p-2 transition-all hover:scale-105 group" 
               role="listitem"
             >          
               <Icon width="20px" height="20px" />            
-              <span class="text-xs text-foreground dark:text-foreground">
+              <span class="text-xs text-foreground dark:text-background">
                 {technology.name}
               </span>
             </div>

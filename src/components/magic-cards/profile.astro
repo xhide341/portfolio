@@ -1,13 +1,13 @@
 ---
 import { motion } from "motion/react";
-import { EnvelopeIcon } from "@heroicons/react/20/solid";
+import { EnvelopeIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import profile from "../../images/crucified-kid.jpg";
 import { Image } from "astro:assets";
 import { MagicCard } from "../react/magic-card.tsx";
-import BlueSkyIcon from "../../icons/bluesky-icon.tsx";
-import DiscordIcon from "../../icons/discord-icon.tsx";
-import LinkedInIcon from "../../icons/linkedin-icon.tsx";
-import GitHubIcon from "../../icons/github-icon.tsx";
+import BlueSkyIcon from "../../icons/socials/bluesky-icon.tsx";
+import DiscordIcon from "../../icons/socials/discord-icon.tsx";
+import LinkedInIcon from "../../icons/socials/linkedin-icon.tsx";
+import GitHubIcon from "../../icons/socials/github-icon.tsx";
 ---
 
 <motion.div
@@ -22,55 +22,59 @@ import GitHubIcon from "../../icons/github-icon.tsx";
     backgroundPattern="cloud-pattern"
     client:load
   >
-    <div class="flex flex-col w-full h-full p-4">
+    <div class="w-full h-full p-4">
       <div
-        class="flex flex-col gap-2 justify-center items-center text-center mx-auto"
+        class="flex flex-col gap-1 mx-auto"
       >
-        <Image
-          src={profile}
-          alt="profile"
-          class="w-20 h-20 md:w-25 md:h-25 object-cover rounded-full"
-          loading="lazy"
-        />
-        <div
-          class="flex flex-col text-center text-black-500 gap-1 justify-around"
-        >
-          <div class="flex flex-col">
-            <h4 class="text-base md:text-2xl font-bold">Hi, I'm Shawne</h4>
-            <p class="text-xs md:text-sm text-gray-800 dark:text-gray-400">@xhide341</p>
+        <div class="flex flex-row text-start text-black-500 gap-2 md:gap-4">
+          <Image
+            src={profile}
+            alt="profile"
+            class="w-20 h-20 md:w-25 md:h-25 object-cover rounded-md"
+            loading="lazy"
+          />
+          <div class="flex flex-col gap-1">
+            <h4 class="text-base md:text-lg font-bold">Shawne Gimena</h4>
+            <p class="flex text-xs md:text-sm text-gray-800 dark:text-gray-400 items-center gap-1">
+              <MapPinIcon className="w-4 h-4" />
+              Manila, Philippines
+            </p>
+            <p class="text-xs md:text-sm text-gray-800 dark:text-gray-400">
+              @xhide341
+            </p>
           </div>
-          <div class="flex gap-2 justify-center mt-2">
-            <a
-              href="https://bsky.app/profile/xhide341"
-              target="_blank"
-              aria-label="BlueSky"
-            >
-              <BlueSkyIcon />
-            </a>
-            <a
-              href="https://discord.com/users/364749406878171136"
-              target="_blank"
-              aria-label="Discord"
-            >
-              <DiscordIcon />
-            </a>
-            <a
-              href="https://linkedin.com/in/your-profile"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </a>
-            <a href="mailto:your-email@example.com" aria-label="Email">
-              <div class="tooltip">
-                <EnvelopeIcon className="w-6 h-6" />
-                <div class="tooltiptext">Email</div>
-              </div>
-            </a>
-            <a href="https://github.com/xhide341" aria-label="GitHub">
-              <GitHubIcon />
-            </a>
-          </div>
+        </div>
+        <div class="flex flex-col gap-2 justify-between mt-2">
+          <a
+            href="https://bsky.app/profile/xhide341"
+            target="_blank"
+            aria-label="BlueSky"
+          >
+            <BlueSkyIcon />
+          </a>
+          <a
+            href="https://discord.com/users/364749406878171136"
+            target="_blank"
+            aria-label="Discord"
+          >
+            <DiscordIcon />
+          </a>
+          <a
+            href="https://linkedin.com/in/your-profile"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <LinkedInIcon />
+          </a>
+          <a href="mailto:your-email@example.com" aria-label="Email">
+            <div class="tooltip">
+              <EnvelopeIcon className="w-6 h-6" />
+              <div class="tooltiptext">Email</div>
+            </div>
+          </a>
+          <a href="https://github.com/xhide341" aria-label="GitHub">
+            <GitHubIcon />
+          </a>
         </div>
       </div>
     </div>
