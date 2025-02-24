@@ -116,7 +116,7 @@ export function MagicCard({
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
               ${isDark 
-                ? 'hsl(217 91% 60%), hsl(217 91% 60%), hsl(0 0% 14.9%) 100%'
+                ? 'hsl(0 0% 100%), hsl(0 0% 100%), hsl(0 0% 14.9%) 100%'
                 : 'hsl(0 0% 0%), hsl(0 0% 15%), hsl(0 0% 89.8%) 100%'
               }
             )
