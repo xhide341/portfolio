@@ -2,6 +2,10 @@
 // Get the current path
 const { pathname } = Astro.url;
 import ThemeToggle from "../theme-toggle.astro";
+import BlueSkyIcon from "../../icons/socials/bluesky-icon.tsx";
+import DiscordIcon from "../../icons/socials/discord-icon.tsx";
+import LinkedInIcon from "../../icons/socials/linkedin-icon.tsx";
+import GitHubIcon from "../../icons/socials/github-icon.tsx";
 
 // Define your navigation items
 const navItems = [
@@ -21,8 +25,39 @@ const isActive = (href: string) => {
 ---
 
 <header
-  class="flex flex-row-reverse justify-between w-full max-w-screen-xl mx-auto md:px-20 md:pb-4"
+  class="flex justify-between w-full max-w-screen-xl mx-auto md:px-24 md:pb-4"
 >
+  <!-- Social Icons -->
+  <div class="flex items-center gap-4 pt-2">
+    <a
+      href="https://bsky.app/profile/xhide341"
+      target="_blank"
+      aria-label="BlueSky"
+    >
+      <BlueSkyIcon />
+    </a>
+    <a
+      href="https://discord.com/users/364749406878171136"
+      target="_blank"
+      aria-label="Discord"
+    >
+      <DiscordIcon />
+    </a>
+    <a
+      href="https://linkedin.com/in/your-profile"
+      target="_blank"
+      aria-label="LinkedIn"
+    >
+      <LinkedInIcon />
+    </a>
+    <a 
+      href="https://github.com/xhide341"
+      target="_blank" 
+      aria-label="GitHub">
+      <GitHubIcon />
+    </a>
+  </div>
+
   <!-- Logo Placeholder -->
   <!-- <div class="w-24 h-24 bg-gray-300 rounded-md animate-pulse"></div> -->
 
