@@ -89,8 +89,6 @@ export function MagicCard({
     mouseY.set(-gradientSize);
   }, [gradientSize, mouseX, mouseY]);
 
-  console.log(isDark);
-
   return (
     <div
       ref={cardRef}
@@ -98,13 +96,13 @@ export function MagicCard({
     >
       <div
         className={cn(
-          "absolute inset-px z-10 rounded-md bg-background dark:bg-[hsla(220,100%,90%,0.12)] dark:backdrop-blur-sm",
+          "absolute inset-px z-10 dark:z-10 rounded-md bg-background dark:bg-background",
           backgroundPattern
         )}
       />
-      <div className="relative z-30 w-full h-full">{children}</div>
+      <div className="relative z-30 dark:z-30 w-full h-full">{children}</div>
       <motion.div
-        className="pointer-events-none absolute inset-px z-10 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-px z-10 dark:z-10 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px, ${gradientColor}, transparent 100%)
@@ -113,12 +111,12 @@ export function MagicCard({
         }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-0 rounded-md bg-border duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-md duration-300 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouseX}px ${mouseY}px,
               ${isDark 
-                ? 'hsla(220, 100%, 90%, 0.12), hsla(220, 100%, 80%, 0.08), transparent 100%'
+                ? 'hsl(217 91% 60%), hsl(217 91% 60%), hsl(0 0% 14.9%) 100%'
                 : 'hsl(0 0% 0%), hsl(0 0% 15%), hsl(0 0% 89.8%) 100%'
               }
             )
