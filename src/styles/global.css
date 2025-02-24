@@ -231,6 +231,8 @@
   --chart-3: hsl(30 80% 55%);
   --chart-4: hsl(280 65% 60%);
   --chart-5: hsl(340 75% 55%);
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-color: #fff;
 }
 
 /*
