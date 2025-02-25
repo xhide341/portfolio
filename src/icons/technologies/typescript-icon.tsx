@@ -1,6 +1,7 @@
 const TypescriptIcon = ({ width = "20px", height = "20px" }: { width?: string; height?: string }) => {
   return (
-    <svg width={width} height={height} viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+    <div className="tooltip">
+      <svg width={width} height={height} viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
         <g>
             <polygon fill="#000" transform="translate(128.000000, 128.000000) scale(1, -1) translate(-128.000000, -128.000000) " points="0 128 0 0 128 0 256 0 256 128 256 256 128 256 0 256">
 
@@ -13,6 +14,8 @@ const TypescriptIcon = ({ width = "20px", height = "20px" }: { width?: string; h
     </path>
         </g>
     </svg>
+      <div className="tooltiptext">TypeScript</div>
+    </div>
   );
 };
 
