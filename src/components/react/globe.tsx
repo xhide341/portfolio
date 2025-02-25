@@ -75,7 +75,7 @@ export function Globe({
       mapSamples: 16000,
       mapBrightness: 1.2,
       baseColor: [1, 1, 1],
-      markerColor: [251 / 255, 100 / 255, 21 / 255],
+      markerColor: [0 / 255, 128 / 255, 0 / 255],
       glowColor: [1, 1, 1],
       markers,
     };
