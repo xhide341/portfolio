@@ -13,16 +13,7 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
   client:load
 >
   <MagicCard className="size-full" client:load>
-    <div class="p-4 size-full flex flex-col">
-      <!-- <h2
-        id="location-title"
-        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide mb-2"
-        aria-label="Current Location"
-      >
-        <MapPinIcon className="w-5 h-5" />
-        Location
-      </h2> -->
-      
+    <div class="pt-4 pb-2 px-2 size-full flex flex-col">      
       <div class="text-center mb-2">
         <p class="text-sm font-medium">Currently based in</p>
         <p class="text-base font-bold">Manila, Philippines</p>
@@ -31,7 +22,7 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
       
       <div class="relative mt-auto max-h-[200px] overflow-hidden">
         <Globe
-          className="absolute bottom-[-30%] left-0 scale-[1.4] w-full"
+          className="absolute bottom-[-20%] left-0 scale-[1.4] w-full"
           isDarkMode={true}
           markers={[{ location: [14.91722, 120.792465], size: 0.1 }]}
           client:load

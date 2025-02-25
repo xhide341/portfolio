@@ -68,8 +68,8 @@ export function Globe({
         state.height = width * 2;
       },
       devicePixelRatio: 2,
-      phi: 0,
-      theta: 0.3,
+      phi: 0.6,
+      theta: -0.3,
       dark: isDarkMode ? 1 : 0,
       diffuse: 0.4,
       mapSamples: 16000,
