@@ -19,13 +19,28 @@ import { motion } from "motion/react";
     <div class="p-2 size-full flex justify-between items-center text-xs md:text-sm font-base text-black-500">
       <p class="px-4 flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-green-700 dark:bg-green-500 animate-pulse"></span>
-        Available
+        Open for Opportunities
       </p>
       <button 
         onclick="window.location.href='mailto:shawnehgn10@gmail.com'"
-        class="mr-1 px-4 py-2 flex text-xs rounded-lg border border-black-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-900 items-center gap-2"
+        class="mr-1 px-4 py-2 flex text-xs rounded-lg border border-black-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-900 items-center gap-2 group"
       >
-        Let's Connect          
+        Let's Connect
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="16" 
+          height="16" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"
+          class="transition-transform transform group-hover:translate-x-1"
+        >
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
       </button>
     </div>
   </MagicCard>
