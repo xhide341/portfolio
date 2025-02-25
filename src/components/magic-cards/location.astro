@@ -1,0 +1,42 @@
+---
+import { MagicCard } from "../react/magic-card.tsx";
+import { motion } from "motion/react";
+import { Globe } from "../react/globe.tsx";
+import { MapPinIcon } from "@heroicons/react/24/outline";
+---
+
+<motion.div
+  animate={{ opacity: 1, x: 0 }}
+  initial={{ opacity: 0, x: 20 }}
+  transition={{ duration: 0.5 }}
+  className="size-full"
+  client:load
+>
+  <MagicCard className="size-full" client:load>
+    <div class="p-4 size-full flex flex-col">
+      <!-- <h2
+        id="location-title"
+        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide mb-2"
+        aria-label="Current Location"
+      >
+        <MapPinIcon className="w-5 h-5" />
+        Location
+      </h2> -->
+      
+      <div class="text-center mb-2">
+        <p class="text-sm font-medium">Currently based in</p>
+        <p class="text-base font-bold">Manila, Philippines</p>
+        <p class="text-xs text-gray-500 mt-1">GMT+8</p>
+      </div>
+      
+      <div class="relative mt-auto max-h-[200px] overflow-hidden">
+        <Globe
+          className="absolute bottom-[-30%] left-0 scale-[1.4] w-full"
+          isDarkMode={true}
+          markers={[{ location: [14.91722, 120.792465], size: 0.1 }]}
+          client:load
+        />
+      </div>
+    </div>
+  </MagicCard>
+</motion.div> 
