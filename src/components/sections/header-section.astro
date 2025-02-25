@@ -1,7 +1,7 @@
 ---
 // Get the current path
 const { pathname } = Astro.url;
-import ThemeToggle from "../theme-toggle.astro";
+import ThemeToggle from "../theme-toggle.tsx";
 import BlueSkyIcon from "../../icons/socials/bluesky-icon.tsx";
 import DiscordIcon from "../../icons/socials/discord-icon.tsx";
 import LinkedInIcon from "../../icons/socials/linkedin-icon.tsx";
@@ -77,7 +77,7 @@ const isActive = (href: string) => {
       ))}
     </nav>
     <div class="flex justify-center items-center pt-2">
-      <ThemeToggle />
+      <ThemeToggle client:load/>
     </div>
   </div>
 </header>
