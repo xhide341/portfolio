@@ -96,7 +96,7 @@ export function MagicCard({
     >
       <div
         className={cn(
-          "absolute inset-px z-10 dark:z-10 rounded-md bg-background dark:bg-zinc-950 dark:backdrop-blur-sm",
+          "absolute inset-px z-10 dark:z-10 rounded-md bg-background",
           backgroundPattern
         )}
       />
