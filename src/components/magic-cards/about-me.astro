@@ -14,6 +14,7 @@ import { motion } from "motion/react";
   <MagicCard
     className="w-full h-full relative select-none text-pretty"
     client:load
+    role="region"
     aria-labelledby="about-me-title"
   >
     <div class="p-4 w-full h-full">
@@ -22,7 +23,7 @@ import { motion } from "motion/react";
         class="flex text-base md:text-lg font-bold items-center gap-1 leading-0.5"
       >
         <InfoIcon aria-hidden="true" />
-        About
+        About Me
       </h2>
       <div
         class="text-xs lg:text-sm text-black-500 p-1 text-justify leading-relaxed"
@@ -31,7 +32,11 @@ import { motion } from "motion/react";
           I'm a full stack web developer with a focus on detailed user
           experience. I am...
         </p>
-        <ul class="p-2 gap-2 list-disc list-inside" role="list">
+        <ul 
+          class="p-2 gap-2 list-disc list-inside" 
+          role="list"
+          aria-label="Key qualifications"
+        >
           <li role="listitem">a BSIT graduate</li>
           <li role="listitem">
             familiar with both php and javascript ecosystems
