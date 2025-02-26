@@ -1,12 +1,10 @@
-const NextJsIcon = ({ width = "20px", height = "20px" }: { width?: string; height?: string }) => {
+const NextJsIcon = ({ className = "" }: { className?: string }) => {
   return (
     <div className="tooltip">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width={width} 
-        height={height} 
         viewBox="0 0 24 24"
-        className="fill-black"
+        className={`fill-black ${className}`}
       >
         <path fill="currentColor" d="M11.572 0c6.445 0 11.572 5.127 11.572 11.572 0 6.445-5.127 11.572-11.572 11.572-6.445 0-11.572-5.127-11.572-11.572C0 5.127 5.127 0 11.572 0Z"/>
         <path className="dark:hidden" fill="url(#nextjs-light-a)" d="M19.925 20.290 8.902 6.953H6.953v9.251h1.558V8.918L18.00 21.18a11.57 11.57 0 0 0 1.925-.89"/>

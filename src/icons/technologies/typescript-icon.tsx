@@ -1,7 +1,7 @@
-const TypescriptIcon = ({ width = "20px", height = "20px" }: { width?: string; height?: string }) => {
+const TypescriptIcon = ({ className = "" }: { className?: string }) => {
   return (
     <div className="tooltip">
-      <svg width={width} height={height} viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+      <svg className={`fill-black dark:fill-white ${className}`} viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
         <g>
           <polygon className="fill-black dark:fill-white" transform="translate(128.000000, 128.000000) scale(1, -1) translate(-128.000000, -128.000000) " points="0 128 0 0 128 0 256 0 256 128 256 256 128 256 0 256"></polygon>
           <path className="fill-white dark:fill-black" d="M146.658132,223.436863 L146.739401,212.953054 L130.079084,212.953054 L113.418767,212.953054 L113.418767,165.613371 L113.418767,118.273689 L101.63464,118.273689 L89.8505126,118.273689 L89.8505126,165.613371 L89.8505126,212.953054 L73.1901951,212.953054 L56.5298776,212.953054 L56.5298776,223.233689 C56.5298776,228.922577 56.6517824,233.676863 56.8143221,233.798768 C56.9362269,233.961308 77.2130522,234.042577 101.797179,234.001943 L146.536227,233.880038 L146.658132,223.436863 Z" transform="translate(101.634640, 176.142993) rotate(-180.000000) translate(-101.634640, -176.142993) ">

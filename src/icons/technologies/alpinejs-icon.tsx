@@ -1,7 +1,7 @@
-const AlpineJsIcon = ({ width = "20px", height = "20px" }: { width?: string; height?: string }) => {
+const AlpineJsIcon = ({ className = "" }: { className?: string }) => {
   return (
     <div className="tooltip">
-      <svg width={width} height={height} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+      <svg className={className} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
         <path 
           className="fill-black dark:fill-white" 
           fillRule="evenodd" 

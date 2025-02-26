@@ -1,9 +1,8 @@
-const AstroIcon = ({ width = "20px", height = "20px" }: { width?: string; height?: string }) => {
+const AstroIcon = ({ className = "" }: { className?: string }) => {
   return (
     <div className="tooltip">
       <svg 
-        width={width} 
-        height={height} 
+        className={className} 
         viewBox="0 0 128 128" 
         xmlns="http://www.w3.org/2000/svg"
       >
