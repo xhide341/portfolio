@@ -38,7 +38,12 @@ const technologies = [
   className="size-full"
   client:load
 >
-  <MagicCard className="size-full" client:load>
+  <MagicCard 
+    className="size-full" 
+    client:load
+    role="region"
+    aria-labelledby="technologies-title"
+  >
     <div class="p-4 size-full">
       <h2
         id="technologies-title"
@@ -49,15 +54,20 @@ const technologies = [
         Tech Stack
       </h2>
 
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2 pt-2 xl:pt-4 px-1 xl:px-2">
+      <div 
+        class="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-2 pt-2 xl:pt-4 px-1 xl:px-2"
+        role="list"
+        aria-label="List of technologies"
+      >
         {technologies.map((technology) => {
           const Icon = technology.Icon;
           return (
             <div 
               class="flex justify-start items-center rounded-md gap-1 lg:gap-2 bg-background border border-border p-2 transition-all hover:scale-105 group" 
               role="listitem"
+              aria-label={`${technology.name} technology`}
             >          
-              <Icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />
+              <Icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" aria-hidden="true" />
               <span class="text-xs text-foreground">
                 {technology.name}
               </span>
