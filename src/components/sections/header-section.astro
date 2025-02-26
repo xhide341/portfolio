@@ -54,25 +54,101 @@ const isActive = (href: string) => {
     </a>
   </div>
 
-  <!-- Logo Placeholder -->
-  <!-- <div class="w-24 h-24 bg-gray-300 rounded-md animate-pulse"></div> -->
+  <!-- Right side container for nav and buttons -->
+  <div class="flex items-center gap-4">
+    <!-- Navigation Menu (hidden on mobile) -->
+    <div id="nav-content" class="hidden lg:flex flex-row justify-between items-center gap-4 md:gap-12 h-full">
+      <nav class="flex flex-col lg:flex-row justify-center items-center gap-4 md:gap-12 pt-2 text-md font-base h-full">
+        {navItems.map(({ href, text }) => (
+          <a
+            href={href}
+            class:list={[
+              "nav-link relative text-center text-gray-800 dark:text-white",
+              { active: isActive(href) }
+            ]}
+          >
+            {text}
+          </a>
+        ))}
+      </nav>
+    </div>
 
-  <div class="flex flex-row justify-between items-center gap-4 md:gap-12 h-full">
-    <nav class="flex justify-center items-center gap-4 md:gap-12 pt-2 text-md font-base h-full">
-      {navItems.map(({ href, text }) => (
-        <a
-          href={href}
-          class:list={[
-            "nav-link relative text-center text-gray-800 dark:text-white",
-            { active: isActive(href) }
-          ]}
-        >
-          {text}
-        </a>
-      ))}
-    </nav>
-    <div class="flex justify-center items-center pt-2">
+    <!-- Theme Toggle and Mobile Menu Button container -->
+    <div class="flex items-center gap-4 pt-4">
       <ThemeToggle client:load/>
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden flex items-center"
+        aria-label="Toggle menu"
+      >
+        <svg
+          class="w-6 h-6 text-gray-800 dark:text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div
+    id="mobile-menu"
+    class="fixed lg:hidden inset-0 bg-white dark:bg-black transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+  >
+    <div class="flex flex-col h-full p-4">
+      <div class="flex justify-end">
+        <button id="close-menu" class="p-2" aria-label="Close menu">
+          <svg
+            class="w-6 h-6 text-gray-800 dark:text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col items-center gap-8 mt-8">
+        {navItems.map(({ href, text }) => (
+          <a
+            href={href}
+            class:list={[
+              "nav-link relative text-center text-gray-800 dark:text-white text-xl",
+              { active: isActive(href) }
+            ]}
+          >
+            {text}
+          </a>
+        ))}
+      </nav>
     </div>
   </div>
 </header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const closeMenuButton = document.getElementById('close-menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.remove('translate-x-full');
+  });
+
+  closeMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.add('translate-x-full');
+  });
+</script>

@@ -65,16 +65,18 @@
     transition: transform 0.15s ease-in-out;
   }
 
-  /* Remove active underline when any nav-link is hovered */
-  nav:hover .nav-link.active::after {
-    transform: scaleX(0);
+  /* Desktop-only hover effects */
+  @media (min-width: 1024px) {
+    nav:hover .nav-link.active::after {
+      transform: scaleX(0);
+    }
+
+    nav:hover .nav-link:hover::after {
+      transform: scaleX(1);
+    }
   }
 
-  /* Show underline only for hovered item */
-  nav:hover .nav-link:hover::after {
-    transform: scaleX(1);
-  }
-
+  /* Shared styles for both mobile and desktop */
   .nav-link.active::after {
     transform: scaleX(1);
   }
