@@ -58,7 +58,7 @@ const isActive = (href: string) => {
   <div class="flex items-center gap-4">
     <!-- Navigation Menu (hidden on mobile) -->
     <div id="nav-content" class="hidden lg:flex flex-row justify-between items-center gap-4 md:gap-12 h-full">
-      <nav class="flex flex-col lg:flex-row justify-center items-center gap-4 md:gap-12 pt-2 text-md font-base h-full">
+      <nav role="navigation" aria-label="Main Navigation" class="flex flex-col lg:flex-row justify-center items-center gap-4 md:gap-12 pt-2 text-md font-base h-full">
         {navItems.map(({ href, text }) => (
           <a
             href={href}

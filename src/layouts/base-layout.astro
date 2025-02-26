@@ -1,5 +1,6 @@
 ---
 // Component Imports
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/sections/header-section.astro";
 import "../styles/global.css";
 ---
@@ -11,6 +12,7 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <ClientRouter />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -31,15 +33,22 @@ import "../styles/global.css";
         document.documentElement.classList.remove('dark');
       }
     </script>
+    <meta name="description" content="Shawne Gimena's portfolio website" />
+    <meta name="keywords" content="web developer, full stack, react, astro, laravel, nextjs, nextauth, prisma, postgresql, langchain, alpinejs, frankenphp, livewire, astraai, lcup" />
+    <meta property="og:title" content="Shawne Gimena - Web Developer" />
+    <meta property="og:description" content="Shawne Gimena's portfolio website" />
+    <meta property="og:image" content="/path-to-preview-image.jpg" />
+    <link rel="canonical" href={Astro.url.href} />
   </head>
   <body class="relative min-h-dvh pt-5 lg:pt-10 bg-gray-100 dark:bg-black">
-    <Header />
+    <Header transition:persist />
     <main
       class="relative w-screen max-w-screen-xl mx-auto font-poppins py-4 px-4 lg:px-10 xl:px-20"
+      transition:animate="slide"
     >
       <slot />
     </main>
-    <footer class="relative w-full max-w-screen-xl mx-auto py-2 text-center">
+    <footer class="relative w-full max-w-screen-xl mx-auto py-2 text-center" transition:persist>
       <hr class="text-gray-300 w-full mx-auto py-2" />
       <p class="text-sm text-gray-700">© 2025. All rights reserved.</p>
     </footer>
