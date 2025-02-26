@@ -14,15 +14,15 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
 >
   <MagicCard className="size-full" client:load>
     <div class="pt-4 pb-2 px-2 size-full flex flex-col justify-between">      
-      <div class="flex-1 flex items-center justify-center">
-        <div class="text-center">
+      <div class="flex-1 flex items-center justify-center bg-transparent">
+        <div class="text-center bg-transparent">
           <p class="text-sm font-medium">Currently based in</p>
           <p class="text-base font-bold">Manila, Philippines</p>
           <p class="text-xs text-gray-500 mt-1">GMT+8</p>
         </div>
       </div>
       
-      <div class="relative max-h-[200px] overflow-hidden rounded-md">
+      <div class="relative max-h-[200px] overflow-hidden rounded-md z-50">
         <Globe
           className="absolute bottom-[-20%] left-0 scale-[1.4] w-full"
           isDarkMode={true}
