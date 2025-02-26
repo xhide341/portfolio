@@ -16,50 +16,62 @@ import "swiper/css/pagination";
   <MagicCard className="size-full" client:load>
     <div class="p-4 size-full">
       <!-- Swiper container -->
-      <div class="swiper services-swiper">
-        <div class="swiper-wrapper text-center">
-          <div class="swiper-slide" aria-label="Web Development">
+      <div 
+        class="swiper services-swiper"
+        role="region"
+        aria-label="Services Carousel"
+      >
+        <div class="swiper-wrapper text-center" aria-live="polite">
+          <div class="swiper-slide" role="group" aria-roledescription="slide">
             <div
               class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
             >
-              <Icon name="ri:code-s-slash-line" class="w-8 h-8 mb-1 md:mb-2" />
+              <Icon name="ri:code-s-slash-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
               <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Web Development</h3>
             </div>
           </div>
-          <div class="swiper-slide" aria-label="Mobile Development">
+          <div class="swiper-slide" role="group" aria-roledescription="slide">
             <div
               class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
             >
-              <Icon name="ri:smartphone-line" class="w-8 h-8 mb-1 md:mb-2" />
+              <Icon name="ri:smartphone-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
               <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Mobile Development</h3>
             </div>
           </div>
-          <div class="swiper-slide" aria-label="UI/UX Design">
+          <div class="swiper-slide" role="group" aria-roledescription="slide">
             <div
               class="p-4 text-center flex flex-col justify-center items-center h-[calc(100%-10px)]"
             >
-              <Icon name="ri:layout-line" class="w-8 h-8 mb-1 md:mb-2" />
+              <Icon name="ri:layout-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
               <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">UI/UX Design</h3>
             </div>
           </div>
-          <div class="swiper-slide" aria-label="LLM Integration">
+          <div class="swiper-slide" role="group" aria-roledescription="slide">
             <div
               class="p-4 text-center flex flex-col justify-center items-center h-[calc(100%-10px)]"
             >
-              <Icon name="ri:brain-line" class="w-8 h-8 mb-1 md:mb-2" />
+              <Icon name="ri:brain-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
               <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">LLM Integration</h3>
             </div>
           </div>
-          <div class="swiper-slide" aria-label="Project Management">
+          <div class="swiper-slide" role="group" aria-roledescription="slide">
             <div
               class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
             >
-              <Icon name="ri:task-line" class="w-8 h-8 mb-1 md:mb-2" />
+              <Icon name="ri:task-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
               <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Project Management</h3>
             </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" role="tablist"></div>
+        <button 
+          class="swiper-button-prev" 
+          aria-label="Previous slide"
+        ></button>
+        <button 
+          class="swiper-button-next" 
+          aria-label="Next slide"
+        ></button>
       </div>
     </div>
   </MagicCard>
@@ -67,19 +79,31 @@ import "swiper/css/pagination";
 
 <script>
   import Swiper from "swiper";
-  import { Pagination, Autoplay } from "swiper/modules";
+  import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
   new Swiper(".services-swiper", {
-    modules: [Pagination, Autoplay],
+    modules: [Pagination, Autoplay, Navigation],
     loop: true,
     pagination: {
       el: ".swiper-pagination",
-      clickable: false,
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     spaceBetween: 20,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
+    a11y: {
+      prevSlideMessage: 'Previous slide',
+      nextSlideMessage: 'Next slide',
+      firstSlideMessage: 'This is the first slide',
+      lastSlideMessage: 'This is the last slide',
+      paginationBulletMessage: 'Go to slide {{index}}',
+    }
   });
 </script>
