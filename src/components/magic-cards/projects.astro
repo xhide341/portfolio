@@ -88,7 +88,7 @@ import { motion } from "motion/react";
                 class="inline-flex"
                 aria-label="View ASTRA AI source code on GitHub (opens in new tab)"
               >
-                <GithubIcon aria-hidden="true" />
+                <GithubIcon aria-hidden="true" className="w-5 h-5" />
               </a>
             </div>
                     <!-- Tech stack section -->
@@ -98,18 +98,17 @@ import { motion } from "motion/react";
               aria-label="Technologies used in ASTRA AI"
             >
               {[
-                { icon: NextJsIcon, name: "NextJS" },
-                { icon: ReactIcon, name: "React" },
-                { icon: PrismaIcon, name: "Prisma" },
-                { icon: NextAuthIcon, name: "NextAuth" },
-                { icon: PostgreSQLIcon, name: "PostgreSQL" },
-                { icon: LangchainIcon, name: "Langchain" }
-              ].map(({ icon: Icon, name }) => (
+                "NextJS",
+                "React",
+                "Prisma",
+                "NextAuth",
+                "PostgreSQL",
+                "Langchain"
+              ].map((name) => (
                 <div
                   class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
                   role="listitem"
                 >
-                  <Icon className="w-4 h-4" aria-hidden="true" />
                   <p class="text-xs">{name}</p>
                 </div>
               ))}
@@ -158,7 +157,7 @@ import { motion } from "motion/react";
                 class="inline-flex"
                 aria-label="View Event Sphere source code on GitHub (opens in new tab)"
               >
-                <GithubIcon aria-hidden="true" />
+                <GithubIcon aria-hidden="true" className="w-5 h-5" />
               </a>
             </div>
             <!-- Tech stack section -->
@@ -168,16 +167,15 @@ import { motion } from "motion/react";
               aria-label="Technologies used in Event Sphere"
             >
               {[
-                { icon: LaravelIcon, name: "Laravel" },
-                { icon: LivewireIcon, name: "Livewire" },
-                { icon: AlpineJsIcon, name: "AlpineJS" },
-                { icon: FrankenphpIcon, name: "FrankenPHP" }
-              ].map(({ icon: Icon, name }) => (
+                "Laravel",
+                "Livewire",
+                "AlpineJS",
+                "FrankenPHP"
+              ].map((name) => (
                 <div
                   class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
                   role="listitem"
                 >
-                  <Icon className="w-4 h-4" aria-hidden="true" />
                   <p class="text-xs">{name}</p>
                 </div>
               ))}

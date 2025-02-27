@@ -1,7 +1,7 @@
 const JavaScriptIcon = ({ className = "" }: { className?: string }) => {
   return (
     <div className="tooltip">
-      <svg className={className} viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <svg className={className} width="24" height="24" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -7479.000000)">
             <g id="icons" transform="translate(56.000000, 160.000000)">
