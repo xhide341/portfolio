@@ -1,6 +1,6 @@
 ---
 import { MagicCard } from "../react/magic-card.tsx";
-import DeployedCodeIcon from "../../icons/deployed-code-icon.tsx";
+import { Icon } from "astro-icon/components";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import GithubIcon from "../../icons/socials/github-icon.tsx";
 import NextJsIcon from "../../icons/technologies/nextjs-icon.tsx";
@@ -37,7 +37,7 @@ import { motion } from "motion/react";
         id="projects-title"
         class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
       >
-        <DeployedCodeIcon aria-hidden="true" />
+        <Icon name="ri:git-repository-line" class="w-4 h-4 text-gray-500" aria-hidden="true" />
         Projects
       </h2>
       <p class="text-xs text-wrap text-gray-500 dark:text-gray-400 p-0 pl-1 md:pl-2 pt-1">
@@ -102,7 +102,8 @@ import { motion } from "motion/react";
                 { icon: ReactIcon, name: "React" },
                 { icon: PrismaIcon, name: "Prisma" },
                 { icon: NextAuthIcon, name: "NextAuth" },
-                { icon: PostgreSQLIcon, name: "PostgreSQL" }
+                { icon: PostgreSQLIcon, name: "PostgreSQL" },
+                { icon: LangchainIcon, name: "Langchain" }
               ].map(({ icon: Icon, name }) => (
                 <div
                   class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
