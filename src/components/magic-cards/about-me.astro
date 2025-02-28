@@ -1,59 +1,45 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 import InfoIcon from "../../icons/info-icon.tsx";
-import { motion } from "motion/react";
 ---
 
-<motion.div
-  animate={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: -20 }}
-  transition={{ duration: 0.5 }}
-  client:load
-  className="w-full h-full"
->
-  <MagicCard
-    className="w-full h-full relative select-none text-pretty"
-    client:load
-    role="region"
-    aria-labelledby="about-me-title"
-  >
-    <div class="p-4 w-full h-full">
-      <h2
-        id="about-me-title"
-        class="flex text-base md:text-lg font-bold items-center gap-1 leading-0.5"
+<MagicCardLayout initial={{ opacity: 0, x: -20 }} className="w-full h-full" client:load>
+  <div class="p-4 w-full h-full">
+    <h2
+      id="about-me-title"
+      class="flex text-base md:text-lg font-bold items-center gap-1 leading-0.5"
+    >
+      <InfoIcon aria-hidden="true" />
+      About Me
+    </h2>
+    <div
+      class="text-xs lg:text-sm text-black-500 p-1 text-justify leading-relaxed"
+    >
+      <p class="py-1">
+        I'm a full stack web developer with a focus on detailed user
+        experience. I am...
+      </p>
+      <ul 
+        class="p-2 gap-2 list-disc list-inside" 
+        role="list"
+        aria-label="Key qualifications"
       >
-        <InfoIcon aria-hidden="true" />
-        About Me
-      </h2>
-      <div
-        class="text-xs lg:text-sm text-black-500 p-1 text-justify leading-relaxed"
-      >
-        <p class="py-1">
-          I'm a full stack web developer with a focus on detailed user
-          experience. I am...
-        </p>
-        <ul 
-          class="p-2 gap-2 list-disc list-inside" 
-          role="list"
-          aria-label="Key qualifications"
-        >
-          <li role="listitem">a BSIT graduate</li>
-          <li role="listitem">
-            familiar with both php and javascript ecosystems
-          </li>
-          <li role="listitem">interested in developer experience</li>
-        </ul>
-        <p class="py-1">
-          I've dabbled with laravel, nextjs, react, and astro. I'm especially
-          curious to explore tech stacks that take a strong stance on
-          development practices.
-        </p>
-        <p class="py-1">
-          I'm enthusiastic about AI and its ability to help developers
-          build better products. I also enjoy creating case studies revolving around
-          AI and UI/UX design.
-        </p>
-      </div>
+        <li role="listitem">a BSIT graduate</li>
+        <li role="listitem">
+          familiar with both php and javascript ecosystems
+        </li>
+        <li role="listitem">interested in developer experience</li>
+      </ul>
+      <p class="py-1">
+        I've dabbled with laravel, nextjs, react, and astro. I'm especially
+        curious to explore tech stacks that take a strong stance on
+        development practices.
+      </p>
+      <p class="py-1">
+        I'm enthusiastic about AI and its ability to help developers
+        build better products. I also enjoy creating case studies revolving around
+        AI and UI/UX design.
+      </p>
     </div>
-  </MagicCard>
-</motion.div>
+  </div>
+</MagicCardLayout>
