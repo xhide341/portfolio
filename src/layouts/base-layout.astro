@@ -3,10 +3,33 @@
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/sections/header-section.astro";
 import "../styles/global.css";
+
+const theme = Astro.cookies.get('theme')?.value || 'light';
 ---
 
-<html lang="en">
+<html lang="en" class:list={[theme === 'dark' ? 'dark' : '']}>
   <head>
+    <script is:inline>
+      (function() {
+        // Theme detection logic
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          let theme = localStorage.getItem('theme');
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        } 
+        // If no localStorage, check system preference
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+
+        // Handle theme during view transitions
+        document.addEventListener('astro:after-swap', () => {
+          let theme = localStorage.getItem('theme');
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+        });
+      })();
+    </script>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -23,16 +46,6 @@ import "../styles/global.css";
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     ></script>
-    <script is:inline>
-      if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
     <meta name="description" content="Hey, I am a full stack web developer specializing in React, Next.js, Laravel, and Astro. Experienced in building accessible, high-performance web applications with modern tech stacks and AI integration." />
     <meta name="keywords" content="web developer, full stack developer, react, nextjs, astro, laravel, typescript, javascript, tailwind, livewire, alpinejs, prisma, postgresql, langchain, ai integration, accessibility, performance optimization" />
     <meta property="og:title" content="Shawne Gimena | Full Stack Web Developer" />
@@ -50,7 +63,7 @@ import "../styles/global.css";
     </main>
     <footer class="relative w-full max-w-screen-xl mx-auto py-2 px-4 lg:px-10 text-center" transition:persist>
       <hr class="text-gray-300 w-full mx-auto py-2" />
-      <p class="text-sm text-gray-700">© 2025. All rights reserved.</p>
+      <p class="text-sm text-gray-500 dark:text-gray-300">© 2025. All rights reserved.</p>
     </footer>
   </body>
 </html>
