@@ -1,8 +1,11 @@
 ---
 import MagicCardLayout from "../../layouts/magic-card-layout";
 import { Icon } from 'astro-icon/components';
-import "swiper/css";
-import "swiper/css/pagination";
+// Import Swiper and required modules
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 ---
 
 <MagicCardLayout initial={{ opacity: 0, y: 20 }} className="size-full" client:load>
