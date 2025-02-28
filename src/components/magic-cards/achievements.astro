@@ -1,63 +1,55 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
-import { motion } from "motion/react";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 import { Icon } from 'astro-icon/components'
 import "swiper/css";
 import "swiper/css/pagination";
 ---
 
-<motion.div
-  animate={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: 20 }}
-  transition={{ duration: 0.5 }}
-  className="size-full"
-  client:load
->
-  <MagicCard className="size-full" client:load>
-    <div class="p-4 size-full">
-      <!-- Swiper container -->
-      <div class="swiper achievements-swiper">
-        <div class="swiper-wrapper text-center">
-          <div class="swiper-slide" aria-label="Lines of Code">
-            <div
-              class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
-            >
-              <Icon name="ri:code-line" class="w-8 h-8 mb-2" />
-              <span class="text-2xl font-bold mb-2">1000+</span>
-              <h3 class="text-xl font-semibold">Lines of Code</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" aria-label="Major Projects">
-            <div
-              class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
-            >
-              <Icon name="ri:rocket-line" class="w-8 h-8 mb-2" />
-              <span class="text-2xl font-bold mb-2">3+</span>
-              <h3 class="text-xl font-semibold">Major Projects</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" aria-label="GitHub Contributions">
-            <div
-              class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
-            >
-              <Icon name="ri:git-pull-request-line" class="w-8 h-8 mb-2" />
-              <span class="text-2xl font-bold mb-1">2000+</span>
-              <h3 class="text-xl font-semibold">GitHub Contributions</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" aria-label="Code Reviews">
-            <div
-              class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
-            >
-              <Icon name="ri:file-check-line" class="w-8 h-8 mb-2" />
-              <span class="text-2xl font-bold mb-1">100+</span>
-              <h3 class="text-xl font-semibold">Code Reviews</h3>
-            </div>
+<MagicCardLayout initial={{ opacity: 0, x: 20 }} className="size-full" client:load>
+  <div class="p-4 size-full">
+    <!-- Swiper container -->
+    <div class="swiper achievements-swiper">
+      <div class="swiper-wrapper text-center">
+        <div class="swiper-slide" aria-label="Lines of Code">
+          <div
+            class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
+          >
+            <Icon name="ri:code-line" class="w-8 h-8 mb-2" />
+            <span class="text-2xl font-bold mb-2">1000+</span>
+            <h3 class="text-xl font-semibold">Lines of Code</h3>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-slide" aria-label="Major Projects">
+          <div
+            class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
+          >
+            <Icon name="ri:rocket-line" class="w-8 h-8 mb-2" />
+            <span class="text-2xl font-bold mb-2">3+</span>
+            <h3 class="text-xl font-semibold">Major Projects</h3>
+          </div>
+        </div>
+        <div class="swiper-slide" aria-label="GitHub Contributions">
+          <div
+            class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
+          >
+            <Icon name="ri:git-pull-request-line" class="w-8 h-8 mb-2" />
+            <span class="text-2xl font-bold mb-1">2000+</span>
+            <h3 class="text-xl font-semibold">GitHub Contributions</h3>
+          </div>
+        </div>
+        <div class="swiper-slide" aria-label="Code Reviews">
+          <div
+            class="p-2 text-center flex flex-col h-[calc(100%-10px)] justify-center items-center"
+          >
+            <Icon name="ri:file-check-line" class="w-8 h-8 mb-2" />
+            <span class="text-2xl font-bold mb-1">100+</span>
+            <h3 class="text-xl font-semibold">Code Reviews</h3>
+          </div>
+        </div>
       </div>
+      <div class="swiper-pagination"></div>
     </div>
+  </div>
   </MagicCard>
 </motion.div>
 

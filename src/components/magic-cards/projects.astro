@@ -1,199 +1,175 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 import { Icon } from "astro-icon/components";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/outline";
 import GithubIcon from "../../icons/socials/github-icon.tsx";
-import NextJsIcon from "../../icons/technologies/nextjs-icon.tsx";
-import ReactIcon from "../../icons/technologies/react-icon.tsx";
-import PrismaIcon from "../../icons/technologies/prisma-icon.tsx";
-import NextAuthIcon from "../../icons/technologies/next-auth-icon.tsx";
-import PostgreSQLIcon from "../../icons/technologies/postgresql-icon.tsx";
-import LangchainIcon from "../../icons/technologies/langchain-icon.tsx";
-import LaravelIcon from "../../icons/technologies/laravel-icon.tsx";
-import LivewireIcon from "../../icons/technologies/livewire-icon.tsx";
-import AlpineJsIcon from "../../icons/technologies/alpinejs-icon.tsx";
-import FrankenphpIcon from "../../icons/technologies/frankenphp-icon.tsx";
 import { Image } from "astro:assets";
 import AstraAiLogo from "../../images/astra-ai-logo.jpg";
 import LcupLogo from "../../images/LCUP-logo.png";
-import { motion } from "motion/react";
 ---
 
-<motion.div
-  animate={{ opacity: 1, y: 0 }}
-  initial={{ opacity: 0, y: -20 }}
-  transition={{ duration: 0.5 }}
-  client:visible
-  className="size-full"
->
-  <MagicCard 
-    className="size-full" 
-    client:load
-    role="region"
-    aria-labelledby="projects-title"
-  >
-    <div class="p-4 size-full flex flex-col">
-      <h2
-        id="projects-title"
-        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
-      >
-        <Icon name="ri:git-repository-line" class="w-4 h-4 text-[#9B9B9B]" aria-hidden="true" />
-        Projects
-      </h2>
-      <p class="text-xs text-wrap text-gray-500 dark:text-gray-400 p-0 pl-1 md:pl-2 pt-1">
-        Note: None of these projects are cloned.
-      </p>
-      <hr class="my-2 text-gray-300" role="presentation" />
+<MagicCardLayout initial={{ opacity: 0, x: -20 }} className="size-full" client:load>
+  <div class="p-4 size-full flex flex-col">
+    <h2
+      id="projects-title"
+      class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
+    >
+      <Icon name="ri:git-repository-line" class="w-4 h-4 text-[#9B9B9B]" aria-hidden="true" />
+      Projects
+    </h2>
+    <p class="text-xs text-wrap text-gray-500 dark:text-gray-400 p-0 pl-1 md:pl-2 pt-1">
+      Note: None of these projects are cloned.
+    </p>
+    <hr class="my-2 text-gray-300" role="presentation" />
+    
+    <!-- ASTRA AI Project -->
+    <div 
+      class="flex flex-col md:flex-row gap-1 md:gap-2 w-full flex-grow"
+      role="article"
+      aria-labelledby="astra-title"
+    >
+      <div class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch w-full gap-1 md:gap-0">
+        <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2 mb-2 md:mb-0">
+          <Image
+            src={AstraAiLogo}
+            alt="ASTRA AI Logo"
+            class="w-20 h-20 rounded-sm"
+            loading="eager"
+          />
+          <h3 
+            id="astra-title"
+            class="text-sm font-medium text-black-500 m-0"
+          >
+            ASTRA AI
+          </h3>
+        </div>
+        <div class="flex flex-col justify-between md:p-1">
+          <div
+            class="flex gap-1 items-center justify-center md:justify-end md:self-end"
+            role="navigation"
+            aria-label="ASTRA AI project links"
+          >
+            <a
+              href="https://astra-ai-iota.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex"
+              aria-label="Visit ASTRA AI website (opens in new tab)"
+            >
+              <GlobeAsiaAustraliaIcon className="w-5 h-5" aria-hidden="true" />
+            </a>
+            <a
+              href="https://github.com/xhide341/astra-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex"
+              aria-label="View ASTRA AI source code on GitHub (opens in new tab)"
+            >
+              <GithubIcon aria-hidden="true" className="w-5 h-5" />
+            </a>
+          </div>
+                  <!-- Tech stack section -->
+          <div
+            class="flex flex-wrap gap-1 mt-2 md:mt-0 items-center w-full justify-center md:justify-end md:self-end"
+            role="list"
+            aria-label="Technologies used in ASTRA AI"
+          >
+            {[
+              "NextJS",
+              "React",
+              "Prisma",
+              "NextAuth",
+              "PostgreSQL",
+              "Langchain"
+            ].map((name) => (
+              <div
+                class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
+                role="listitem"
+              >
+                <p class="text-xs">{name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
       
-      <!-- ASTRA AI Project -->
-      <div 
-        class="flex flex-col md:flex-row gap-1 md:gap-2 w-full flex-grow"
-        role="article"
-        aria-labelledby="astra-title"
-      >
-        <div class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch w-full gap-1 md:gap-0">
-          <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2 mb-2 md:mb-0">
+
+    </div>
+
+    <hr class="my-2 text-gray-300" role="presentation" />
+    
+    <!-- Event Sphere Project -->
+    <div 
+      class="flex flex-col md:flex-row gap-1 md:gap-2 w-full flex-grow"
+      role="article"
+      aria-labelledby="eventsphere-title"
+    >
+      <div class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch w-full gap-1 md:gap-0">
+        <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2 mb-2 md:mb-0">
+          <div class="flex items-center rounded-sm bg-black h-20 w-20 justify-center">
             <Image
-              src={AstraAiLogo}
-              alt="ASTRA AI Logo"
-              class="w-20 h-20 rounded-sm"
-              loading="eager"
+              src={LcupLogo}
+              alt="Event Sphere Logo"
+              class="w-auto h-10"
+              loading="lazy"
             />
-            <h3 
-              id="astra-title"
-              class="text-sm font-medium text-black-500 m-0"
-            >
-              ASTRA AI
-            </h3>
           </div>
-          <div class="flex flex-col justify-between md:p-1">
-            <div
-              class="flex gap-1 items-center justify-center md:justify-end md:self-end"
-              role="navigation"
-              aria-label="ASTRA AI project links"
+          <h3 
+            id="eventsphere-title"
+            class="text-sm font-medium text-black-500 m-0"
+          >
+            Event Sphere
+          </h3>
+        </div>
+        <div class="flex flex-col justify-between md:p-1">
+          <div
+            class="flex gap-1 items-center justify-center md:justify-end md:self-end"
+            role="navigation"
+            aria-label="Event Sphere project links"
+          >
+            <a
+              href="https://github.com/xhide341/eventsphere"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex"
+              aria-label="View Event Sphere source code on GitHub (opens in new tab)"
             >
-              <a
-                href="https://astra-ai-iota.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex"
-                aria-label="Visit ASTRA AI website (opens in new tab)"
+              <GithubIcon aria-hidden="true" className="w-5 h-5" />
+            </a>
+          </div>
+          <!-- Tech stack section -->
+          <div
+            class="flex flex-wrap gap-1 mt-2 md:mt-0 items-center w-full justify-center md:justify-end md:self-end"
+            role="list"
+            aria-label="Technologies used in Event Sphere"
+          >
+            {[
+              "Laravel",
+              "Livewire",
+              "AlpineJS",
+              "FrankenPHP"
+            ].map((name) => (
+              <div
+                class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
+                role="listitem"
               >
-                <GlobeAsiaAustraliaIcon className="w-5 h-5" aria-hidden="true" />
-              </a>
-              <a
-                href="https://github.com/xhide341/astra-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex"
-                aria-label="View ASTRA AI source code on GitHub (opens in new tab)"
-              >
-                <GithubIcon aria-hidden="true" className="w-5 h-5" />
-              </a>
-            </div>
-                    <!-- Tech stack section -->
-            <div
-              class="flex flex-wrap gap-1 mt-2 md:mt-0 items-center w-full justify-center md:justify-end md:self-end"
-              role="list"
-              aria-label="Technologies used in ASTRA AI"
-            >
-              {[
-                "NextJS",
-                "React",
-                "Prisma",
-                "NextAuth",
-                "PostgreSQL",
-                "Langchain"
-              ].map((name) => (
-                <div
-                  class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
-                  role="listitem"
-                >
-                  <p class="text-xs">{name}</p>
-                </div>
-              ))}
-            </div>
+                <p class="text-xs">{name}</p>
+              </div>
+            ))}
           </div>
         </div>
-        
-
-      </div>
-
-      <hr class="my-2 text-gray-300" role="presentation" />
-      
-      <!-- Event Sphere Project -->
-      <div 
-        class="flex flex-col md:flex-row gap-1 md:gap-2 w-full flex-grow"
-        role="article"
-        aria-labelledby="eventsphere-title"
-      >
-        <div class="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-stretch w-full gap-1 md:gap-0">
-          <div class="flex flex-col md:flex-row items-center gap-1 md:gap-2 mb-2 md:mb-0">
-            <div class="flex items-center rounded-sm bg-black h-20 w-20 justify-center">
-              <Image
-                src={LcupLogo}
-                alt="Event Sphere Logo"
-                class="w-auto h-10"
-                loading="lazy"
-              />
-            </div>
-            <h3 
-              id="eventsphere-title"
-              class="text-sm font-medium text-black-500 m-0"
-            >
-              Event Sphere
-            </h3>
-          </div>
-          <div class="flex flex-col justify-between md:p-1">
-            <div
-              class="flex gap-1 items-center justify-center md:justify-end md:self-end"
-              role="navigation"
-              aria-label="Event Sphere project links"
-            >
-              <a
-                href="https://github.com/xhide341/eventsphere"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex"
-                aria-label="View Event Sphere source code on GitHub (opens in new tab)"
-              >
-                <GithubIcon aria-hidden="true" className="w-5 h-5" />
-              </a>
-            </div>
-            <!-- Tech stack section -->
-            <div
-              class="flex flex-wrap gap-1 mt-2 md:mt-0 items-center w-full justify-center md:justify-end md:self-end"
-              role="list"
-              aria-label="Technologies used in Event Sphere"
-            >
-              {[
-                "Laravel",
-                "Livewire",
-                "AlpineJS",
-                "FrankenPHP"
-              ].map((name) => (
-                <div
-                  class="flex items-center gap-1 border border-gray-300 py-1 px-2 rounded-full"
-                  role="listitem"
-                >
-                  <p class="text-xs">{name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr class="my-2 text-gray-300" role="presentation" />
-      
-      <div 
-        class="flex items-center justify-center gap-2 mt-2"
-        role="status"
-        aria-label="Future projects status"
-      >
-        <p class="text-xs text-gray-500 dark:text-gray-400">More cool projects on the way</p>
-        <span aria-hidden="true">⚠️</span>
       </div>
     </div>
-  </MagicCard>
-</motion.div>
+
+    <hr class="my-2 text-gray-300" role="presentation" />
+    
+    <div 
+      class="flex items-center justify-center gap-2 mt-2"
+      role="status"
+      aria-label="Future projects status"
+    >
+      <p class="text-xs text-gray-500 dark:text-gray-400">More cool projects on the way</p>
+      <span aria-hidden="true">⚠️</span>
+    </div>
+  </div>
+</MagicCardLayout>

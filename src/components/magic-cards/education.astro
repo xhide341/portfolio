@@ -1,85 +1,71 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 import HistoryIcon from "../../icons/history-icon.tsx";
-import { motion } from "motion/react";
 ---
 
-<motion.div
-  animate={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: 20 }}
-  transition={{ duration: 0.5 }}
-  client:load
-  className="size-full"
->
-  <MagicCard
-    className="relative size-full"
-    role="region"
-    aria-labelledby="education-title"
-    client:load
-  >
-    <div class="p-4 size-full">
-      <h2
-        id="education-title"
-        class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
-      >
-        <HistoryIcon aria-hidden="true" />
-        Education History
-      </h2>
+<MagicCardLayout initial={{ opacity: 0, y: 20 }} className="size-full" client:load>
+  <div class="p-4 size-full">
+    <h2
+      id="education-title"
+      class="flex text-base md:text-lg font-bold items-center gap-1 tracking-wide"
+    >
+      <HistoryIcon aria-hidden="true" />
+      Education History
+    </h2>
+    <div
+      class="flex flex-col my-2 ml-2 space-y-4 lg:space-y-8 relative"
+      role="list"
+      aria-label="Education timeline"
+    >
       <div
-        class="flex flex-col my-2 ml-2 space-y-4 lg:space-y-8 relative"
-        role="list"
-        aria-label="Education timeline"
+        class="absolute left-1.5 top-1.5 h-[calc(100%-.5rem)] w-px bg-gray-300 dark:bg-gray-700"
+        aria-hidden="true"
       >
+      </div>
+      <div class="relative pl-6 flex-grow" role="listitem">
         <div
-          class="absolute left-1.5 top-1.5 h-[calc(100%-.5rem)] w-px bg-gray-300 dark:bg-gray-700"
+          class="absolute left-0 top-1.5 w-3 h-3 rounded-full border-1 border-black bg-white dark:bg-zinc-900 dark:border-white"
           aria-hidden="true"
         >
         </div>
-        <div class="relative pl-6 flex-grow" role="listitem">
-          <div
-            class="absolute left-0 top-1.5 w-3 h-3 rounded-full border-1 border-black bg-white dark:bg-zinc-900 dark:border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="space-y-1 mt-0.5">
-            <h3 class="text-xs lg:text-sm font-medium">
-              Bachelor of Science in Information Technology
-            </h3>
-            <p class="text-xs text-gray-600 dark:text-gray-400">
-              La Consolacion University Philippines
-              <span class="block text-xs text-gray-600 dark:text-gray-400 mt-1">2020-2024</span>
-            </p>
-          </div>
+        <div class="space-y-1 mt-0.5">
+          <h3 class="text-xs lg:text-sm font-medium">
+            Bachelor of Science in Information Technology
+          </h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">
+            La Consolacion University Philippines
+            <span class="block text-xs text-gray-600 dark:text-gray-400 mt-1">2020-2024</span>
+          </p>
         </div>
-        <div class="relative pl-6 flex-grow" role="listitem">
-          <div
-            class="absolute left-0 top-1.5 w-3 h-3 rounded-full border-1 border-black bg-white dark:bg-zinc-900 dark:border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="space-y-1 mt-0.5">
-            <h3 class="text-xs lg:text-sm font-medium">High School Diploma</h3>
-            <p class="text-xs text-gray-600 dark:text-gray-400">
-              Colegio de Calumpit Institute
-              <span class="block text-xs text-gray-600 dark:text-gray-400 mt-1">2014-2020</span>
-            </p>
-          </div>
+      </div>
+      <div class="relative pl-6 flex-grow" role="listitem">
+        <div
+          class="absolute left-0 top-1.5 w-3 h-3 rounded-full border-1 border-black bg-white dark:bg-zinc-900 dark:border-white"
+          aria-hidden="true"
+        >
         </div>
-        <div class="relative pl-6 flex-grow" role="listitem">
-          <div
-            class="absolute left-0 top-1.5 w-3 h-3 rounded-full border-1 border-black bg-white dark:bg-zinc-900 dark:border-white"
-            aria-hidden="true"
-          >
-          </div>
-          <div class="space-y-1 mt-0.5">
-            <h3 class="text-xs lg:text-sm font-medium">Elementary School</h3>
-            <p class="text-xs text-gray-600 dark:text-gray-400">
-              Pungo Elementary School
-              <span class="block text-xs text-gray-600 dark:text-gray-400 mt-1">2008-2014</span>
-            </p>
-          </div>
+        <div class="space-y-1 mt-0.5">
+          <h3 class="text-xs lg:text-sm font-medium">High School Diploma</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">
+            Colegio de Calumpit Institute
+            <span class="block text-xs text-gray-600 dark:text-gray-400 mt-1">2014-2020</span>
+          </p>
+        </div>
+      </div>
+      <div class="relative pl-6 flex-grow" role="listitem">
+        <div
+          class="absolute left-0 top-1.5 w-3 h-3 rounded-full border-1 border-black bg-white dark:bg-zinc-900 dark:border-white"
+          aria-hidden="true"
+        >
+        </div>
+        <div class="space-y-1 mt-0.5">
+          <h3 class="text-xs lg:text-sm font-medium">Elementary School</h3>
+          <p class="text-xs text-gray-600 dark:text-gray-400">
+            Pungo Elementary School
+            <span class="block text-xs text-gray-600 dark:text-gray-400 mt-1">2008-2014</span>
+          </p>
         </div>
       </div>
     </div>
-  </MagicCard>
-</motion.div>
+  </div>
+</MagicCardLayout>

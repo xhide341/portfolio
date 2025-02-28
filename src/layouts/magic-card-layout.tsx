@@ -24,7 +24,7 @@ export default function MagicCardLayout({
 
   if (isMobile) {
     return (
-      <div className={`${className} rounded-md bg-background border-border border backdrop-blur-sm cloud-pattern`}>
+      <div className={`${className} rounded-md bg-background border-border border cloud-pattern`}>
         {children}
       </div>
     );

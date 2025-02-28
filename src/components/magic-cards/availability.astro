@@ -1,57 +1,43 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
-import { Marquee } from "../react/marquee.tsx";
-import { motion } from "motion/react";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 ---
 
-<motion.div
-  animate={{ opacity: 1, y: 0 }}
-  initial={{ opacity: 0, y: -20 }}
-  transition={{ duration: 0.5 }}
-  client:load
-  className="size-full"
->
-  <MagicCard
-    className="size-full relative select-none text-pretty"
-    client:load
-    role="region"
-    aria-label="Availability Status"
-  >
-    <div class="p-2 size-full flex justify-between items-center text-xs md:text-sm font-base text-black-500">
-      <p 
-        class="px-4 flex items-center gap-1 md:gap-2 text-xs xl:text-sm"
-        role="status"
-        aria-live="polite"
+
+<MagicCardLayout initial={{ opacity: 0, x: 20 }} className="size-full" client:load>
+  <div class="p-2 size-full flex justify-between items-center text-xs md:text-sm font-base text-black-500">
+    <p 
+      class="px-4 flex items-center gap-1 md:gap-2 text-xs xl:text-sm"
+      role="status"
+      aria-live="polite"
       >
         <span 
           class="w-2 h-2 rounded-full bg-green-700 dark:bg-green-500 animate-pulse"
           aria-hidden="true"
         ></span>
         <span>Open for Opportunities</span>
-      </p>
-      <a
-        href="mailto:shawnehgn10@gmail.com"
-        class="mr-1 px-4 py-2 flex text-xs rounded-md md:rounded-lg border border-black-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-900 items-center gap-2 group"
-        aria-label="Connect via email"
+    </p>
+    <a
+      href="mailto:shawnehgn10@gmail.com"
+      class="mr-1 px-4 py-2 flex text-xs rounded-md md:rounded-lg border border-black-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-900 items-center gap-2 group"
+      aria-label="Connect via email"
+    >
+      Let's Connect
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="16" 
+        height="16" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        class="transition-transform transform group-hover:translate-x-1"
+        aria-hidden="true"
       >
-        Let's Connect
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="16" 
-          height="16" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          stroke-width="2" 
-          stroke-linecap="round" 
-          stroke-linejoin="round"
-          class="transition-transform transform group-hover:translate-x-1"
-          aria-hidden="true"
-        >
-          <path d="M5 12h14"/>
-          <path d="m12 5 7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
-  </MagicCard>
-</motion.div>
+        <path d="M5 12h14"/>
+        <path d="m12 5 7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</MagicCardLayout>

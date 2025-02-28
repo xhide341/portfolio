@@ -1,73 +1,64 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
-import { motion } from "motion/react";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 import { Icon } from 'astro-icon/components';
 import "swiper/css";
 import "swiper/css/pagination";
 ---
 
-<motion.div
-  animate={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: -20 }}
-  transition={{ duration: 0.5 }}
-  className="size-full"
-  client:load
->
-  <MagicCard className="size-full" client:load>
-    <div class="p-4 size-full">
-      <!-- Swiper container -->
-      <div 
-        class="swiper services-swiper"
-        role="region"
-        aria-label="Services Carousel"
-      >
-        <div class="swiper-wrapper text-center" aria-live="polite">
-          <div class="swiper-slide" role="group" aria-roledescription="slide">
-            <div
-              class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
-            >
-              <Icon name="ri:code-s-slash-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Web Development</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" role="group" aria-roledescription="slide">
-            <div
-              class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
-            >
-              <Icon name="ri:smartphone-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Mobile Development</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" role="group" aria-roledescription="slide">
-            <div
-              class="p-4 text-center flex flex-col justify-center items-center h-[calc(100%-10px)]"
-            >
-              <Icon name="ri:layout-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">UI/UX Design</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" role="group" aria-roledescription="slide">
-            <div
-              class="p-4 text-center flex flex-col justify-center items-center h-[calc(100%-10px)]"
-            >
-              <Icon name="ri:brain-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">LLM Integration</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" role="group" aria-roledescription="slide">
-            <div
-              class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
-            >
-              <Icon name="ri:task-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
-              <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Project Management</h3>
-            </div>
+<MagicCardLayout initial={{ opacity: 0, y: 20 }} className="size-full" client:load>
+  <div class="p-4 size-full">
+    <!-- Swiper container -->
+    <div 
+      class="swiper services-swiper"
+      role="region"
+      aria-label="Services Carousel"
+    >
+      <div class="swiper-wrapper text-center" aria-live="polite">
+        <div class="swiper-slide" role="group" aria-roledescription="slide">
+          <div
+            class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
+          >
+            <Icon name="ri:code-s-slash-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
+            <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Web Development</h3>
           </div>
         </div>
-        <div class="swiper-pagination" role="tablist"></div>
+        <div class="swiper-slide" role="group" aria-roledescription="slide">
+          <div
+            class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
+          >
+            <Icon name="ri:smartphone-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
+            <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Mobile Development</h3>
+          </div>
+        </div>
+        <div class="swiper-slide" role="group" aria-roledescription="slide">
+          <div
+            class="p-4 text-center flex flex-col justify-center items-center h-[calc(100%-10px)]"
+          >
+            <Icon name="ri:layout-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
+            <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">UI/UX Design</h3>
+          </div>
+        </div>
+        <div class="swiper-slide" role="group" aria-roledescription="slide">
+          <div
+            class="p-4 text-center flex flex-col justify-center items-center h-[calc(100%-10px)]"
+          >
+            <Icon name="ri:brain-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
+            <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">LLM Integration</h3>
+          </div>
+        </div>
+        <div class="swiper-slide" role="group" aria-roledescription="slide">
+          <div
+            class="p-4 flex flex-col justify-center items-center h-[calc(100%-10px)]"
+          >
+            <Icon name="ri:task-line" class="w-8 h-8 mb-1 md:mb-2" aria-hidden="true" />
+            <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">Project Management</h3>
+          </div>
+        </div>
       </div>
+      <div class="swiper-pagination" role="tablist"></div>
     </div>
-  </MagicCard>
-</motion.div>
+  </div>
+</MagicCardLayout>
 
 <script>
   import Swiper from "swiper";

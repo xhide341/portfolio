@@ -1,64 +1,49 @@
 ---
-import { MagicCard } from "../react/magic-card.tsx";
-import { motion } from "motion/react";
+import MagicCardLayout from "../../layouts/magic-card-layout";
 import { Globe } from "../react/globe.tsx";
-import { MapPinIcon } from "@heroicons/react/24/outline";
 ---
 
-<motion.div
-  animate={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: 20 }}
-  transition={{ duration: 0.5 }}
-  className="size-full"
-  client:load
->
-  <MagicCard 
-    className="size-full" 
-    client:load
-    role="region"
-    aria-labelledby="location-title"
-  >
-    <div class="pt-4 pb-2 px-2 size-full flex flex-col justify-between">      
-      <div class="flex-1 flex items-center justify-center bg-transparent">
-        <div class="text-center bg-transparent overflow-hidden">
-          <h2 
-            id="location-title" 
-            class="sr-only"
-          >
-            Location Information
-          </h2>
-          <p 
-            class="text-sm font-medium"
-            aria-label="Location status"
-          >
-            Currently based in
-          </p>
-          <p 
-            class="text-base font-bold"
-            aria-label="City and country"
-          >
-            Manila, Philippines
-          </p>
-          <p 
-            class="text-xs text-gray-500 md:mt-1"
-            aria-label="Time zone"
-          >
-            GMT+8
-          </p>
-        </div>
-      </div>
-      
-      <div 
-        class="relative max-h-[200px] overflow-hidden rounded-md"
-        aria-hidden="true"
-      >
-        <Globe
-          className="absolute bottom-[-30%] md:bottom-[-20%] left-0 scale-[1.4] w-full"
-          isDarkMode={true}
-          markers={[{ location: [14.91722, 120.792465], size: 0.1 }]}
-          client:load
-        />
+<MagicCardLayout initial={{ opacity: 0, y: 20 }} className="size-full" client:load>
+  <div class="pt-4 pb-2 px-2 size-full flex flex-col justify-between">      
+    <div class="flex-1 flex items-center justify-center bg-transparent">
+      <div class="text-center bg-transparent overflow-hidden">
+        <h2 
+          id="location-title" 
+          class="sr-only"
+        >
+          Location Information
+        </h2>
+        <p 
+          class="text-sm font-medium"
+          aria-label="Location status"
+        >
+          Currently based in
+        </p>
+        <p 
+          class="text-base font-bold"
+          aria-label="City and country"
+        >
+          Manila, Philippines
+        </p>
+        <p 
+          class="text-xs text-gray-500 md:mt-1"
+          aria-label="Time zone"
+        >
+          GMT+8
+        </p>
       </div>
     </div>
-  </MagicCard>
-</motion.div> 
+    
+    <div 
+      class="relative max-h-[200px] overflow-hidden rounded-md"
+      aria-hidden="true"
+    >
+      <Globe
+        className="absolute bottom-[-30%] md:bottom-[-20%] left-0 scale-[1.4] w-full"
+        isDarkMode={true}
+        markers={[{ location: [14.91722, 120.792465], size: 0.1 }]}
+        client:load
+      />
+    </div>
+  </div>
+</MagicCardLayout>
