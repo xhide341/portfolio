@@ -3,31 +3,17 @@
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/sections/header-section.astro";
 import "../styles/global.css";
-
-const theme = Astro.cookies.get('theme')?.value || 'light';
 ---
 
-<html lang="en" class:list={[theme === 'dark' ? 'dark' : '']}>
+<html lang="en">
   <head>
     <script is:inline>
-      (function() {
-        // Theme detection logic
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          let theme = localStorage.getItem('theme');
-          document.documentElement.classList.toggle('dark', theme === 'dark');
-        } 
-        // If no localStorage, check system preference
-        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }
-
-        // Handle theme during view transitions
-        document.addEventListener('astro:after-swap', () => {
-          let theme = localStorage.getItem('theme');
-          document.documentElement.classList.toggle('dark', theme === 'dark');
-        });
-      })();
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        document.documentElement.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
     </script>
     <title>Shawne Gimena | Full Stack Web Developer</title>
     <meta charset="utf-8" />
@@ -47,7 +33,7 @@ const theme = Astro.cookies.get('theme')?.value || 'light';
     <meta property="og:image" content="/path-to-preview-image.jpg" />
     <link rel="canonical" href={Astro.url.href} />
   </head>
-  <body class="relative min-h-dvh pt-5 lg:pt-10 bg-background dark:bg-background">
+  <body class="relative min-h-dvh pt-5 lg:pt-10 bg-background">
     <Header transition:persist />
     <main
       class="relative w-screen max-w-screen-xl mx-auto font-poppins py-4 px-4 lg:px-10"
