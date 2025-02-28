@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { MagicCard } from "../components/react/magic-card";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 interface MagicCardLayoutProps {
   children: ReactNode;
