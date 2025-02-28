@@ -21,45 +21,9 @@ A modern, accessible, and performant portfolio website built with Astro, React, 
 - [Swiper](https://swiperjs.com) - Touch Slider
 - [PNPM](https://pnpm.io) - Package Manager
 
-## 🛠️ Development
+## 🎉 Lighthouse Score
 
-Clone the repository
-```sh
-git clone https://github.com/shawne-gimena/portfolio-website.git
-```
-
-Install dependencies
-```sh
-pnpm install
-```
-
-Start the development server
-```sh
-pnpm dev
-```
-Build for production
-```sh
-pnpm build
-```
-
-## 📦 Project Structure
-
-src/
-├── components/ # UI Components
-├── layouts/ # Page layouts
-├── pages/ # Route pages
-├── styles/ # Global styles
-└── icons/ # SVG icons
-
-## 🎨 Features Showcase
-
-- Interactive Magic Cards with hover effects
-- Smooth page transitions
-- Dynamic theme switching
-- Responsive grid layout
-- Accessible navigation
-- Performance optimized assets
-- SEO friendly meta tags
+![Lighthouse Score](./public/lighthouse-score.png)
 
 ## 📝 License
 
@@ -67,4 +31,4 @@ MIT
 
 ---
 
-If you find my repository interesting, please consider giving it a ⭐️ on GitHub!
+If you find my portfolio website awesome, please consider giving it a ⭐️ on GitHub!
