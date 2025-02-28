@@ -247,7 +247,6 @@
 */
 
 @theme inline {
-  --font-poppins: "Poppins";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

@@ -6,7 +6,7 @@ const NextJsIcon = ({ className = "" }: { className?: string }) => {
         width='24' 
         height='24'
         viewBox="0 0 24 24"
-        className={`fill-black ${className}`}
+        className={`fill-current ${className}`}
       >
         <path fill="currentColor" d="M11.572 0c6.445 0 11.572 5.127 11.572 11.572 0 6.445-5.127 11.572-11.572 11.572-6.445 0-11.572-5.127-11.572-11.572C0 5.127 5.127 0 11.572 0Z"/>
         <path className="dark:hidden" fill="url(#nextjs-light-a)" d="M19.925 20.290 8.902 6.953H6.953v9.251h1.558V8.918L18.00 21.18a11.57 11.57 0 0 0 1.925-.89"/>
