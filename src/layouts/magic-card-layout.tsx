@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { MagicCard } from "../components/react/magic-card";
 import type { ReactNode } from "react";
 import { useEffect, useState } from "react";
+import { debounce } from 'lodash';
 
 interface MagicCardLayoutProps {
   children: ReactNode;
@@ -19,7 +20,14 @@ export default function MagicCardLayout({
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const debouncedCheck = debounce(checkMobile, 250);
+    debouncedCheck();
+    window.addEventListener('resize', debouncedCheck);
+    return () => {
+      window.removeEventListener('resize', debouncedCheck);
+      debouncedCheck.cancel();
+    };
   }, []);
 
   if (isMobile) {
