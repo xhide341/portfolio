@@ -73,29 +73,45 @@ import "swiper/css/pagination";
   import Swiper from "swiper";
   import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
-  new Swiper(".services-swiper", {
-    modules: [Pagination, Autoplay, Navigation],
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    spaceBetween: 20,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    },
-    a11y: {
-      prevSlideMessage: 'Previous slide',
-      nextSlideMessage: 'Next slide',
-      firstSlideMessage: 'This is the first slide',
-      lastSlideMessage: 'This is the last slide',
-      paginationBulletMessage: 'Go to slide {{index}}',
+  // Create a function to initialize Swiper
+  function initSwiper() {
+    const swiper = new Swiper(".services-swiper", {
+      modules: [Pagination, Autoplay, Navigation],
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      spaceBetween: 20,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
+        firstSlideMessage: 'This is the first slide',
+        lastSlideMessage: 'This is the last slide',
+        paginationBulletMessage: 'Go to slide {{index}}',
+      }
+    });
+
+    return swiper;
+  }
+
+  let swiperInstance: Swiper | null = null;
+  document.addEventListener('astro:page-load', () => {
+    swiperInstance = initSwiper();
+  });
+
+  document.addEventListener('astro:before-swap', () => {
+    if (swiperInstance && swiperInstance instanceof Swiper) {
+      swiperInstance.destroy(true, true);
     }
   });
 </script>

@@ -140,15 +140,31 @@ const isActive = (href: string) => {
 </header>
 
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const closeMenuButton = document.getElementById('close-menu');
-  const mobileMenu = document.getElementById('mobile-menu');
+  function setupMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMenuButton = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = mobileMenu?.querySelectorAll('.nav-link');
 
-  mobileMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('translate-x-full');
-  });
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.remove('translate-x-full');
+    });
 
-  closeMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.add('translate-x-full');
-  });
+    closeMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.add('translate-x-full');
+    });
+
+    // Close menu when clicking a nav link
+    mobileNavLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('translate-x-full');
+      });
+    });
+  }
+
+  // Initial setup
+  setupMobileMenu();
+
+  // Re-run setup when the page changes
+  document.addEventListener('astro:page-load', setupMobileMenu);
 </script>
