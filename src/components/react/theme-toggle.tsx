@@ -4,16 +4,28 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-      setTheme('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      setTheme('light');
-    }
+    const handleThemeCheck = () => {
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+        setTheme('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        setTheme('light');
+      }
+    };
+
+    // Check on mount
+    handleThemeCheck();
+
+    // Listen for Astro page navigation
+    document.addEventListener('astro:after-navigation', handleThemeCheck);
+    
+    return () => {
+      document.removeEventListener('astro:after-navigation', handleThemeCheck);
+    };
   }, []);
 
   const toggleTheme = () => {

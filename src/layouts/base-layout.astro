@@ -3,29 +3,34 @@
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/sections/header-section.astro";
 import "../styles/global.css";
+import "@fontsource/poppins";
 ---
 
-<html lang="en">
+<html lang="en" transition:name="root" transition:animate="none">
   <head>
     <script is:inline>
+      // Initial theme setup
       if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
         document.documentElement.classList.toggle('dark', localStorage.getItem('theme') === 'dark');
       } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark');
         localStorage.setItem('theme', 'dark');
       }
+
+      // Handle theme during navigation
+      document.addEventListener('astro:after-swap', () => {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      });
     </script>
     <title>Shawne Gimena | Full Stack Web Developer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <ClientRouter />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <ClientRouter fallback="swap"/>
     <meta name="description" content="Hey, I am a full stack web developer specializing in React, Next.js, Laravel, and Astro. Experienced in building accessible, high-performance web applications with modern tech stacks and AI integration." />
     <meta name="keywords" content="web developer, full stack developer, react, nextjs, astro, laravel, typescript, javascript, tailwind, livewire, alpinejs, prisma, postgresql, langchain, ai integration, accessibility, performance optimization" />
     <meta property="og:title" content="Shawne Gimena | Full Stack Web Developer" />
@@ -36,7 +41,7 @@ import "../styles/global.css";
   <body class="relative min-h-dvh pt-5 lg:pt-10 bg-background">
     <Header transition:persist />
     <main
-      class="relative w-screen max-w-screen-xl mx-auto font-poppins py-4 px-4 lg:px-10"
+      class="relative w-screen max-w-screen-xl mx-auto py-4 px-4 lg:px-10"
       transition:animate="slide"
     >
       <slot />
