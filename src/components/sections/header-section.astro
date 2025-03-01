@@ -1,16 +1,39 @@
 ---
 const { pathname } = Astro.url;
 import ThemeToggle from "../react/theme-toggle.tsx";
-import BlueSkyIcon from "../../icons/socials/bluesky-icon.tsx";
-import DiscordIcon from "../../icons/socials/discord-icon.tsx";
-import LinkedInIcon from "../../icons/socials/linkedin-icon.tsx";
-import GitHubIcon from "../../icons/socials/github-icon.tsx";
+import githubIcon from "../../icons/socials/github-icon.tsx";
+import blueSkyIcon from "../../icons/socials/bluesky-icon.tsx";
+import discordIcon from "../../icons/socials/discord-icon.tsx";
+import linkedInIcon from "../../icons/socials/linkedin-icon.tsx";
 
 const navItems = [
   { href: "/", text: "Home" },
   { href: "/works", text: "Works" },
   { href: "/about", text: "About" },
   { href: "/blogs", text: "Blogs" },
+];
+
+const socials = [
+  {
+    name: "BlueSky",
+    url: "https://bsky.app/profile/xhide3.bsky.social",
+    icon: blueSkyIcon,
+  },
+  {
+    name: "Discord",
+    url: "https://discord.gg/364749406878171136",
+    icon: discordIcon,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/xhide341",
+    icon: linkedInIcon,
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/xhide341",
+    icon: githubIcon,
+  }
 ];
 
 const isActive = (href: string) => {
@@ -25,33 +48,11 @@ const isActive = (href: string) => {
   class="flex justify-between w-full h-full max-w-screen-xl mx-auto px-4 lg:px-12 pb-2 lg:pb-4"
 >
   <div class="flex items-center justify-between gap-4 pt-4">
-    <a
-      href="https://bsky.app/profile/xhide3.bsky.social"
-      target="_blank"
-      aria-label="BlueSky"
-    >
-      <BlueSkyIcon />
-    </a>
-    <a
-      href="https://discord.com/users/364749406878171136"
-      target="_blank"
-      aria-label="Discord"
-    >
-      <DiscordIcon />
-    </a>
-    <a
-      href="https://linkedin.com/in/your-profile"
-      target="_blank"
-      aria-label="LinkedIn"
-    >
-      <LinkedInIcon />
-    </a>
-    <a 
-      href="https://github.com/xhide341"
-      target="_blank" 
-      aria-label="GitHub">
-      <GitHubIcon />
-    </a>
+    {socials.map((social) => (
+      <a href={social.url} target="_blank" rel="noopener noreferrer" class="inline-flex" aria-label={`Visit ${social.name} profile (opens in new tab)`}>
+        <social.icon className="w-6 h-6"/>
+      </a>
+    ))}
   </div>
 
   <!-- Right side container for nav and buttons -->
