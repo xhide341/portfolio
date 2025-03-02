@@ -5,10 +5,15 @@ import tailwindcss from "@tailwindcss/vite";
 
 import icon from 'astro-icon';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
     // Enable React to support React JSX components.
-    integrations: [react({
+    site: 'https://xhide341.netlify.app/',
+    integrations: [
+        sitemap(),
+        react({
          include: ['**/react/*', '**/magicui/*']
         }), icon({
             svgoOptions: {
