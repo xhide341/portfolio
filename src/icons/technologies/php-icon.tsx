@@ -1,7 +1,7 @@
 const PhpIcon = ({ className = "" }: { className?: string }) => {
   return (
     <div className="tooltip">
-        <svg fill="currentColor" width='24' height='24' className={`text-black dark:text-white ${className}`} version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlSpace="preserve">
+        <svg className={`text-black dark:text-white ${className}`} width='24' height='24' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlSpace="preserve">
 
         <g id="5151e0c8492e5103c096af88a51e2ea6">
 
