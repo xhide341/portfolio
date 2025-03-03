@@ -69,11 +69,10 @@ import 'swiper/css/autoplay';
   let swiperInstance: Swiper | null = null;
 
   function initSwiper() {
-    // Check if the element exists before initializing
     const swiperEl = document.querySelector('.services-swiper');
     if (!swiperEl) return null;
 
-    const swiper = new Swiper(".services-swiper", {
+    return new Swiper(".services-swiper", {
       modules: [Pagination, Autoplay, Navigation],
       loop: true,
       pagination: {
@@ -98,31 +97,23 @@ import 'swiper/css/autoplay';
         paginationBulletMessage: 'Go to slide {{index}}',
       }
     });
-
-    return swiper;
   }
 
-  // Initialize on page load
   document.addEventListener('astro:page-load', () => {
+    const swiperEl = document.querySelector('.services-swiper');
+    if (!swiperEl) return;
+    
     swiperInstance = initSwiper();
   });
 
-  // Cleanup before page transition
-  document.addEventListener('astro:before-swap', () => {
-    if (swiperInstance) {
+  document.addEventListener('astro:unmount', () => {
+    if (!swiperInstance) return;
+    
+    if (typeof swiperInstance.destroy === 'function') {
       try {
-        // Stop autoplay first
-        if (swiperInstance.autoplay) {
-          swiperInstance.autoplay.stop();
-        }
-        // Disable loop mode to prevent errors
-        if (swiperInstance.params) {
-          swiperInstance.params.loop = false;
-        }
-        // Destroy the instance
-        swiperInstance.destroy();
+        swiperInstance.destroy(true, true);
       } catch (error) {
-        console.warn('Swiper cleanup error:', error);
+        console.warn('Error during Swiper cleanup:', error);
       }
       swiperInstance = null;
     }

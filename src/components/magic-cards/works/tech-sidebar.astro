@@ -1,49 +1,60 @@
 ---
 import MagicCardLayout from "src/layouts/magic-card-layout";
+import ReactIcon from "src/icons/technologies/react-icon";
+import NextJsIcon from "src/icons/technologies/nextjs-icon";
+import AstroIcon from "src/icons/technologies/astro-icon";
+import TailwindIcon from "src/icons/technologies/tailwind-icon";
+import TypescriptIcon from "src/icons/technologies/typescript-icon";
+import JavascriptIcon from "src/icons/technologies/javascript-icon";
+import LaravelIcon from "src/icons/technologies/laravel-icon";
+import LivewireIcon from "src/icons/technologies/livewire-icon";
+import AlpineJsIcon from "src/icons/technologies/alpinejs-icon";
+import PhpIcon from "src/icons/technologies/php-icon";
+import PrismaIcon from "src/icons/technologies/prisma-icon";
+import NextAuthIcon from "src/icons/technologies/next-auth-icon";
+import PostgreSQLIcon from "src/icons/technologies/postgresql-icon";
+import LangchainIcon from "src/icons/technologies/langchain-icon";
+import FrankenphpIcon from "src/icons/technologies/frankenphp-icon";
+import DockerIcon from "src/icons/technologies/docker-icon";
 
 let activeTechIds: string[] = [];
 
 const allTechnologies = [
-  { id: "react", name: "React", icon: "react-icon" },
-  { id: "nextjs", name: "Next.js", icon: "nextjs-icon" },
-  { id: "vue", name: "Vue", icon: "vue-icon" },
-  { id: "angular", name: "Angular", icon: "angular-icon" },
-  { id: "svelte", name: "Svelte", icon: "svelte-icon" },
-  { id: "astro", name: "Astro", icon: "astro-icon" },
-  { id: "tailwind", name: "Tailwind CSS", icon: "tailwind-icon" },
-  { id: "typescript", name: "TypeScript", icon: "typescript-icon" },
-  { id: "javascript", name: "JavaScript", icon: "javascript-icon" },
-  { id: "node", name: "Node.js", icon: "node-icon" },
-  { id: "python", name: "Python", icon: "python-icon" },
-  { id: "laravel", name: "Laravel", icon: "laravel-icon" },
-  { id: "livewire", name: "Livewire", icon: "livewire-icon" },
-  { id: "alpinejs", name: "Alpine.js", icon: "alpinejs-icon" },
-  { id: "php", name: "PHP", icon: "php-icon" },
-  { id: "prisma", name: "Prisma", icon: "prisma-icon" },
-  { id: "nextauth", name: "NextAuth", icon: "nextauth-icon" },
-  { id: "postgresql", name: "PostgreSQL", icon: "postgresql-icon" },
-  { id: "langchain", name: "Langchain", icon: "langchain-icon" },
-  { id: "frankenphp", name: "FrankenPHP", icon: "frankenphp-icon" },
-  { id: "docker", name: "Docker", icon: "docker-icon" },
+  { id: "react", name: "React", Icon: ReactIcon },
+  { id: "nextjs", name: "Next.js", Icon: NextJsIcon },
+  { id: "astro", name: "Astro", Icon: AstroIcon },
+  { id: "tailwind", name: "Tailwind CSS", Icon: TailwindIcon },
+  { id: "typescript", name: "TypeScript", Icon: TypescriptIcon },
+  { id: "javascript", name: "JavaScript", Icon: JavascriptIcon },
+  { id: "laravel", name: "Laravel", Icon: LaravelIcon },
+  { id: "livewire", name: "Livewire", Icon: LivewireIcon },
+  { id: "alpinejs", name: "Alpine.js", Icon: AlpineJsIcon },
+  { id: "php", name: "PHP", Icon: PhpIcon },
+  { id: "prisma", name: "Prisma", Icon: PrismaIcon },
+  { id: "nextauth", name: "NextAuth", Icon: NextAuthIcon },
+  { id: "postgresql", name: "PostgreSQL", Icon: PostgreSQLIcon },
+  { id: "langchain", name: "Langchain", Icon: LangchainIcon },
+  { id: "frankenphp", name: "FrankenPHP", Icon: FrankenphpIcon },
+  { id: "docker", name: "Docker", Icon: DockerIcon },
 ];
 ---
 
-<MagicCardLayout initial={{ opacity: 0, x: -20 }} className="size-full" client:load>
+<MagicCardLayout initial={{ opacity: 0, x: -20 }} className="size-full mt-4" client:load>
   <div class="p-4">
     <h2 class="text-xl font-bold mb-4">Technologies</h2>
-  
     <div class="gap-2 grid grid-cols-2">
-      {allTechnologies.map((tech) => (
+      {allTechnologies.map(({ id, name, Icon }) => (
         <div
           class:list={[
-            "p-2 rounded border transition-all duration-300 text-center text-xs md:text-sm",
-            activeTechIds.includes(tech.id)
-              ? "border-foreground text-foreground bg-background"
-              : "border-border text-gray-300"
+            "flex flex-col p-2 rounded border transition-all duration-300 items-center justify-center gap-2",
+            activeTechIds.includes(id)
+              ? "border-foreground text-foreground bg-border"
+              : "border-border text-border opacity-50"
           ]}
-          data-tech-id={tech.id}
+          data-tech-id={id}
         >
-          <span>{tech.name}</span>
+          <Icon className="w-4 h-4 md:w-6 md:h-6" />
+          <span class="text-xs md:text-sm">{name}</span>
         </div>
       ))}
     </div>
@@ -51,17 +62,26 @@ const allTechnologies = [
 </MagicCardLayout>
 
 <script>
-  document.addEventListener('projectInView', (event) => {
+  const handleProjectInView = (event: Event) => {
     const techIds = (event as CustomEvent).detail.technologies;
     const techElements = document.querySelectorAll('[data-tech-id]');
+    if (!techElements.length) return;
     
     techElements.forEach(element => {
       const techId = element.getAttribute('data-tech-id');
       if (techIds.includes(techId)) {
-        element.classList.add('border-foreground', 'text-foreground', 'bg-background', 'font-semibold');
+        element.classList.add('border-foreground', 'text-foreground', 'bg-background', 'font-semibold', 'opacity-100');
       } else {
-        element.classList.remove('border-foreground', 'text-foreground', 'bg-background', 'font-semibold');
+        element.classList.remove('border-foreground', 'text-foreground', 'bg-background', 'font-semibold', 'opacity-100');
       }
     });
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    document.addEventListener('projectInView', handleProjectInView);
+  });
+
+  document.addEventListener('astro:unmount', () => {
+    document.removeEventListener('projectInView', handleProjectInView);
   });
 </script>

@@ -1,14 +1,16 @@
 ---
 // This component will display detailed information about each project
 // In a real implementation, you might fetch this data from a CMS or local files
+import { Image } from "astro:assets";
+import AstraAiLogo from "src/images/astra-ai-logo.jpg";
 
 const projects = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: "A personal portfolio website built with modern technologies to showcase my work and skills.",
-    technologies: ["astro", "tailwind", "typescript"],
-    image: "/images/projects/portfolio.jpg",
+    title: "ASTRA AI",
+    description: "An observational learning platform that uses AI to help you learn a topic.",
+    technologies: ["tailwind", "typescript", "langchain", "prisma", "nextjs", "nextauth", "postgresql"],
+    image: AstraAiLogo,
     link: "#",
     github: "#",
     details: "This project was built to showcase my work and expertise in web development. It features a responsive design, dark mode support, and interactive elements."
@@ -18,7 +20,7 @@ const projects = [
     title: "E-commerce Platform",
     description: "A full-featured e-commerce solution with product catalog, cart, and checkout functionality.",
     technologies: ["react", "node", "typescript"],
-    image: "/images/projects/ecommerce.jpg",
+    image: AstraAiLogo,
     link: "#",
     github: "#",
     details: "This e-commerce platform includes user authentication, product management, shopping cart functionality, and secure payment processing integration."
@@ -28,7 +30,7 @@ const projects = [
     title: "Task Management App",
     description: "A productivity application for managing tasks, projects, and team collaboration.",
     technologies: ["vue", "tailwind", "node"],
-    image: "/images/projects/taskapp.jpg",
+    image: AstraAiLogo,
     link: "#",
     github: "#",
     details: "This task management application helps users organize their work, set priorities, and collaborate with team members. It includes features like drag-and-drop task organization, due dates, and progress tracking."
@@ -40,7 +42,14 @@ const projects = [
   {projects.map((project) => (
     <div class="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden shadow-md project-card" data-tech-ids={project.technologies.join(',')}>
       <div class="aspect-video w-full">
-        <img src={project.image} alt={project.title} class="object-cover w-full h-full" />
+        <Image
+          src={project.image}
+          alt={project.title} 
+          class="object-cover w-full h-full"
+          loading="eager"
+          format="webp"
+          quality={100}
+        />
       </div>
       
       <div class="p-4 md:p-6">
@@ -68,22 +77,37 @@ const projects = [
 </div>
 
 <script>
-  // Client-side code to trigger the 'projectInView' event when a project is scrolled into view
-  // This would use Intersection Observer in a real implementation
-  document.addEventListener('DOMContentLoaded', () => {
+  let observer: IntersectionObserver | null = null;
+  let debounceTimeout: number | null = null;
+
+  const debounce = (callback: Function, delay = 150) => {
+    if (debounceTimeout) window.clearTimeout(debounceTimeout);
+    debounceTimeout = window.setTimeout(callback, delay);
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    if (observer) observer.disconnect();
     const projectCards = document.querySelectorAll('.project-card');
-    
-    const observer = new IntersectionObserver((entries) => {
+    if (!projectCards.length) return;
+
+    observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const techIds = (entry.target as HTMLElement).dataset.techIds?.split(',') || [];
-          document.dispatchEvent(new CustomEvent('projectInView', {
-            detail: { technologies: techIds }
-          }));
+          debounce(() => {
+            document.dispatchEvent(new CustomEvent('projectInView', {
+              detail: { technologies: techIds }
+            }));
+          });
         }
       });
     }, { threshold: 0.5 });
     
-    projectCards.forEach(card => observer.observe(card));
+    projectCards.forEach(card => observer?.observe(card));
+  });
+
+  document.addEventListener('astro:unmount', () => {
+    if (observer) observer.disconnect();
+    if (debounceTimeout) window.clearTimeout(debounceTimeout);
   });
 </script> 
