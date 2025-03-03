@@ -1,9 +1,11 @@
 ---
-// This component will display all technologies and highlight the ones used in the current project
-// You can pass active technology IDs as props or use a reactive store
+import MagicCardLayout from "src/layouts/magic-card-layout";
+
+let activeTechIds: string[] = [];
 
 const allTechnologies = [
   { id: "react", name: "React", icon: "react-icon" },
+  { id: "nextjs", name: "Next.js", icon: "nextjs-icon" },
   { id: "vue", name: "Vue", icon: "vue-icon" },
   { id: "angular", name: "Angular", icon: "angular-icon" },
   { id: "svelte", name: "Svelte", icon: "svelte-icon" },
@@ -13,50 +15,53 @@ const allTechnologies = [
   { id: "javascript", name: "JavaScript", icon: "javascript-icon" },
   { id: "node", name: "Node.js", icon: "node-icon" },
   { id: "python", name: "Python", icon: "python-icon" },
-  // Add more technologies as needed
+  { id: "laravel", name: "Laravel", icon: "laravel-icon" },
+  { id: "livewire", name: "Livewire", icon: "livewire-icon" },
+  { id: "alpinejs", name: "Alpine.js", icon: "alpinejs-icon" },
+  { id: "php", name: "PHP", icon: "php-icon" },
+  { id: "prisma", name: "Prisma", icon: "prisma-icon" },
+  { id: "nextauth", name: "NextAuth", icon: "nextauth-icon" },
+  { id: "postgresql", name: "PostgreSQL", icon: "postgresql-icon" },
+  { id: "langchain", name: "Langchain", icon: "langchain-icon" },
+  { id: "frankenphp", name: "FrankenPHP", icon: "frankenphp-icon" },
+  { id: "docker", name: "Docker", icon: "docker-icon" },
 ];
-
-// This would come from the current active project
-// In a real implementation, you might use JavaScript to update this dynamically
-const activeTechIds = ["react", "tailwind", "typescript"];
 ---
 
-<div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
-  <h2 class="text-xl font-bold mb-4">Technologies</h2>
+<MagicCardLayout initial={{ opacity: 0, x: -20 }} className="size-full" client:load>
+  <div class="p-4">
+    <h2 class="text-xl font-bold mb-4">Technologies</h2>
   
-  <div class="flex flex-wrap gap-2">
-    {allTechnologies.map((tech) => (
-      <div 
-        class:list={[
-          "p-2 rounded border transition-all duration-300",
-          activeTechIds.includes(tech.id) 
-            ? "border-foreground text-foreground bg-background" 
-            : "border-gray-200 dark:border-gray-700 text-gray-400"
-        ]}
-        data-tech-id={tech.id}
-      >
-        <span>{tech.name}</span>
-      </div>
-    ))}
+    <div class="gap-2 grid grid-cols-2">
+      {allTechnologies.map((tech) => (
+        <div
+          class:list={[
+            "p-2 rounded border transition-all duration-300 text-center text-xs md:text-sm",
+            activeTechIds.includes(tech.id)
+              ? "border-foreground text-foreground bg-background"
+              : "border-border text-gray-300"
+          ]}
+          data-tech-id={tech.id}
+        >
+          <span>{tech.name}</span>
+        </div>
+      ))}
+    </div>
   </div>
-  
-  <script>
-    // Client-side code to handle highlighting technologies based on the current project in view
-    // This is just a placeholder - you would implement the actual logic based on your needs
-    document.addEventListener('projectInView', (event) => {
-      const techIds = (event as CustomEvent).detail.technologies;
-      const techElements = document.querySelectorAll('[data-tech-id]');
-      
-      techElements.forEach(element => {
-        const techId = element.getAttribute('data-tech-id');
-        if (techIds.includes(techId)) {
-          element.classList.add('border-foreground', 'text-foreground', 'bg-background');
-          element.classList.remove('border-gray-200', 'dark:border-gray-700', 'text-gray-400');
-        } else {
-          element.classList.remove('border-foreground', 'text-foreground', 'bg-background');
-          element.classList.add('border-gray-200', 'dark:border-gray-700', 'text-gray-400');
-        }
-      });
+</MagicCardLayout>
+
+<script>
+  document.addEventListener('projectInView', (event) => {
+    const techIds = (event as CustomEvent).detail.technologies;
+    const techElements = document.querySelectorAll('[data-tech-id]');
+    
+    techElements.forEach(element => {
+      const techId = element.getAttribute('data-tech-id');
+      if (techIds.includes(techId)) {
+        element.classList.add('border-foreground', 'text-foreground', 'bg-background', 'font-semibold');
+      } else {
+        element.classList.remove('border-foreground', 'text-foreground', 'bg-background', 'font-semibold');
+      }
     });
-  </script>
-</div> 
+  });
+</script>
