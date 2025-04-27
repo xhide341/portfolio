@@ -1,14 +1,111 @@
 ---
-import TechSidebar from "src/components/magic-cards/works/tech-sidebar.astro";
-import ProjectDetails from "src/components/magic-cards/works/project-details.astro";
+import MagicCardLayout from "src/layouts/magic-card-layout";
+import { Image } from "astro:assets";
+import AstraAiLogo from "src/images/astra-ai-logo.jpg";
+import Jpssite from "src/images/jpssite.png";
+import AstraAI from "src/images/astra-ai.png";
+import EventSphere from "src/images/eventsphere.png";
+import MorphApp from "src/images/morph.png";
+import { Icon } from "astro-icon/components";
+import GithubIcon from "src/icons/socials/github-icon.tsx";
+
+const projects = [
+  {
+    id: 1,
+    title: "ASTRA AI",
+    description: "An observational learning platform utilizing AI conversations.",
+    technologies: ["NextJS", "React", "Prisma", "NextAuth", "PostgreSQL", "Langchain", "Zustand"],
+    image: AstraAI,
+    link: "https://astra-ai-iota.vercel.app/",
+    github: "https://github.com/xhide341/astra-ai",
+    details: "This project was developed as part of my exploration in LLMs and NextJS and Langchain. Also implemented SSE."
+  },
+  {
+    id: 2,
+    title: "Event Sphere",
+    description: "A full-featured event management system with FilamentPHP dashboard.",
+    technologies: ["TALL","Laravel", "Livewire", "AlpineJS", "FrankenPHP", "FilamentPHP", "AlpineJS"],
+    image: EventSphere,
+    link: "https://github.com/xhide341/eventsphere",
+    github: "https://github.com/xhide341/eventsphere",
+    details: "This is my capstone project in college. An event management system using Laravel and FilamentPHP."
+  },
+  {
+    id: 3,
+    title: "Morph App",
+    description: "A real-time collaborative pomodoro app with theme variants.",
+    technologies: ["React", "SocketIO", "Redis", "Node", "Express"],
+    image: MorphApp,
+    link: "https://morph-app-plum.vercel.app/",
+    github: "https://github.com/xhide341/morph-app",
+    details: "Morph is my personal project app for implementing Websockets, Redis, and a Monorepo architectural pattern."
+  },
+  {
+    id: 4,
+    title: "JPSSITE",
+    description: "An unofficial website for the JPSSITE as part of a school project.",
+    technologies: ["Astro", "TailwindCSS", "TypeScript", "Shadcn/UI"],
+    image: Jpssite,
+    link: "https://xhide341.github.io/jpssite/",
+    github: "https://github.com/xhide341/jpssite",
+    details: "JPSSITE is part of my practice in UI/UX design. It is also a school project dedicated to HTML and CSS."
+  },
+];
 ---
 
-<div class="flex flex-col md:flex-row gap-4 min-h-screen">
-  <div class="md:w-1/3 lg:w-1/4 md:sticky md:top-10 md:self-start">
-    <TechSidebar />
-  </div>
-  
-  <div class="flex-1">
-    <ProjectDetails />
-  </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-screen p-4">
+  {projects.map((project) => (
+    <MagicCardLayout initial={{ opacity: 0, y: 20 }} className="w-full h-full max-h-[500px]" client:load>
+      <div class="p-4 size-full flex flex-col">
+        <div class="w-full h-full mb-4 rounded-lg overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            class="object-cover w-full h-full"
+            loading="eager"
+            format="webp"
+            quality={100}
+          />
+        </div>
+
+        <div class="flex-1 flex flex-col">
+          <h2 class="text-xl font-bold mb-2">{project.title}</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">{project.description}</p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.technologies.map((tech) => (
+              <span class="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <p class="text-sm mb-4 line-clamp-3">{project.details}</p>
+
+          <div class="flex gap-3 mt-auto">
+            {project.link !== project.github && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-xs px-3 py-1.5 rounded bg-foreground text-background hover:bg-foreground/90 transition-colors"
+              >
+                <Icon name="ri:external-link-line" class="w-4 h-4" />
+                View Project
+              </a>
+            )}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-xs px-3 py-1.5 rounded bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors"
+            >
+              <GithubIcon className="w-4 h-4" />
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </MagicCardLayout>
+  ))}
 </div>
